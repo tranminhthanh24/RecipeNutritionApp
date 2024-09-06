@@ -5,5 +5,49 @@
     <string name="title_favorite">Favorite</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- pasta recipe-->
+    <string name="pastaIngredients">Pasta
+    \nCream cheese: n kcal
+    \nParmesan cheese: n kcal
+    \nOlive oil: n kcal
+    \nSalt pepper: n kcal
+    \nTotal calories: n kcal</string>
+
+    <!-- pasta description -->
+    <string name="pastaDescription">Cook your pasta until al dente
+    \nSaute garlic in olive oil until fragrant
+    \nAdd cream cheese, pasta cooking water, parmesan and stir well
+    \nDrain and add pasta to the skillet
+    \nToss until well combined, adding some pasta water if needed</string>
+
+    <!-- pizza recipe -->
+    <string name="pizzaIngredients">Pizza
+    \nFlour
+    \nTomato ketchup
+    \nOlive oil
+    \nMozzarella
+    \nPepperoni
+    \nParmesan cheese</string>
+
+    <!-- pizza description -->
+    <string name="pizzaDescription">Use a pizza stone
+    \nChop up half the pepperoni then add it
+    \nAdd cheese with tomato sauce
+    \nBake the pizza about 200C for 15 minutes </string>
+
+    <!-- hamburger recipe -->
+    <string name="hamburgerIngredients">Hamburger
+    \nBurger buns
+    \nBeef patty
+    \nLettuce leaves
+    \nCheese slices</string>
+
+    <!-- hamburger description -->
+    <string name="hamburgerDescription">Bake your Burger buns for 15 minutes
+    \nGrill the beef patty
+    \nGrill the cheese
+    \nAdd lettuce leaves with beef patty and cheese to the bun</string>
     <string name="load_more">Load more</string>
+    <string name="title_activity_food_detail">FoodDetail</string>
 </resources>
