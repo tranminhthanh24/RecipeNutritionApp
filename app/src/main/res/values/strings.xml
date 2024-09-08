@@ -6,4 +6,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="load_more">Load more</string>
+
+    <string name = "item1"> Apple </string>
+    <string name = "item2"> Orange </string>
+    <string name = "item3"> Banana </string>
+    <string name = "item4"> Watermelon </string>
 </resources>
