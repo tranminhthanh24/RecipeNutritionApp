@@ -27,6 +27,7 @@ public class FoodAdapter extends ArrayAdapter<FoodList> {
         ImageView listImage = view.findViewById(R.id.listImage);
         TextView listName = view.findViewById(R.id.listName);
         TextView listTime = view.findViewById(R.id.listTime);
+
         listImage.setImageResource(listData.image);
         listName.setText(listData.name);
         listTime.setText(listData.time);

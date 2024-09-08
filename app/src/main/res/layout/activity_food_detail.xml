@@ -15,7 +15,7 @@
         android:layout_marginTop="14dp"
         android:text="Recipe Name"
         android:textSize="24sp"
-        android:textColor="@color/MainDarkText"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_gravity="center"/>
 
@@ -33,14 +33,14 @@
             android:id="@+id/detailImage"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
-            android:src="@drawable/pasta"
+            android:src="@drawable/maggi_300x169"
             android:scaleType="centerCrop"/>
     </androidx.cardview.widget.CardView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Duration:"
-        android:textColor="@color/MainDarkText"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
@@ -56,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ingredients:"
-        android:textColor="@color/MainDarkText"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
@@ -64,7 +64,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/pastaIngredients"
+        android:text="@string/maggiIngredients"
         android:layout_marginStart="10dp"
         android:textSize="16sp"
         android:id="@+id/detailIngredients"/>
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Steps:"
-        android:textColor="@color/MainDarkText"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
@@ -80,7 +80,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/pastaDescription"
+        android:text="@string/pastaDesc"
         android:layout_marginStart="10dp"
         android:textSize="16sp"
         android:id="@+id/detailDesc"/>

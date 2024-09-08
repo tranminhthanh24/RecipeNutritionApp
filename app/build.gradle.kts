@@ -36,7 +36,7 @@ android {
 
     buildFeatures {
         viewBinding = true
-        compose = false // Tắt nếu không dùng Compose
+        compose = false
     }
 
     viewBinding {

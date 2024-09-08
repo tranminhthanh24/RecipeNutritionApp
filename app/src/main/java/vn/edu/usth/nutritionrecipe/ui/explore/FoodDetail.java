@@ -25,9 +25,9 @@ public class FoodDetail extends AppCompatActivity {
             if (intent != null){
                 String name = intent.getStringExtra("name");
                 String time = intent.getStringExtra("time");
-                int ingredients = intent.getIntExtra("ingredients", R.string.pastaIngredients);
-                int desc = intent.getIntExtra("desc", R.string.pastaDescription);
-                int image = intent.getIntExtra("image", R.drawable.pasta);
+                int ingredients = intent.getIntExtra("ingredients",  R.string.maggiIngredients);
+                int desc = intent.getIntExtra("desc", R.string.maggieDesc);
+                int image = intent.getIntExtra("image", R.drawable.maggi_300x169);
                 binding.detailName.setText(name);
                 binding.detailTime.setText(time);
                 binding.detailDesc.setText(desc);
