@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="MainDarkBackground">#111c24</color>
     <color name="MainDarkText">#fefeff</color>
+    <color name="MainLightBackground">#f5f5f5</color>
+    <color name="red">#25500000</color>
 </resources>
