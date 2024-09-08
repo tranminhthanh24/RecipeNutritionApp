@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 
 import java.util.ArrayList;
 
+import vn.edu.usth.nutritionrecipe.ui.explore.ExploreFragment;
 import vn.edu.usth.nutritionrecipe.ui.explore.FoodDetail;
 import vn.edu.usth.nutritionrecipe.ui.explore.FoodList;
 import vn.edu.usth.nutritionrecipe.databinding.ActivityMainBinding;
