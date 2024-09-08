@@ -3,6 +3,8 @@ package vn.edu.usth.nutritionrecipe;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import vn.edu.usth.nutritionrecipe.Adapter.FoodAdapter;
 import vn.edu.usth.nutritionrecipe.databinding.ActivityMainBinding;
 
 

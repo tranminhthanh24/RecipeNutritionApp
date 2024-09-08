@@ -1,4 +1,4 @@
-package vn.edu.usth.nutritionrecipe;
+package vn.edu.usth.nutritionrecipe.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import vn.edu.usth.nutritionrecipe.R;
 import vn.edu.usth.nutritionrecipe.ui.explore.FoodList;
 
 public class FoodAdapter extends ArrayAdapter<FoodList> {

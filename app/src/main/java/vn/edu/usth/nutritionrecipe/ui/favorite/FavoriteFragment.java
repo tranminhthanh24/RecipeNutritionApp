@@ -14,5 +14,24 @@ import vn.edu.usth.nutritionrecipe.databinding.FragmentFavoriteBinding;
 
 public class FavoriteFragment extends Fragment {
 
+    private FragmentFavoriteBinding binding;
 
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        FavoriteViewModel favoriteViewModel =
+                new ViewModelProvider(this).get(FavoriteViewModel.class);
+
+        binding = FragmentFavoriteBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        final TextView textView = binding.textFavorite;
+        favoriteViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        return root;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }
