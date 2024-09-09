@@ -10,7 +10,7 @@ public class ExploreViewModel extends ViewModel {
 
     public ExploreViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("LOAD MORE...");
+        mText.setValue("");
     }
 
     public LiveData<String> getText() {

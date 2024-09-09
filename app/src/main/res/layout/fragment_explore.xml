@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.explore.ExploreFragment">
 
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:padding="10dp"
+        android:layout_marginTop="12dp"
+        android:dividerHeight="10.0sp"/>
+
     <TextView
         android:id="@+id/text_explore"
         android:layout_width="match_parent"
