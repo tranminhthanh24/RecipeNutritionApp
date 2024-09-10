@@ -4,7 +4,6 @@
     <string name="title_explore">Explore</string>
     <string name="title_favorite">Favorite</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="load_more">Load more</string>
     <string name="background_image">background image</string>
     <string name="register">Register</string>
     <string name="sign_in">Sign-in</string>
@@ -14,4 +13,111 @@
     <string name="already_have_an_account">Already have an account?</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="sign_in_as_guest">Sign-in as guest</string>
+
+    <!-- Pasta -->
+    <string name="pastaIngredients">- Pasta
+        \n- Cream Cheese
+        \n- Parmesan Cheese
+        \n- Olive Oil
+        \n- Garlic
+        \n- Salt Pepper</string>
+    <string name="pastaDesc">- Cook your pasta until it dense
+        \n- Add cream cheese, pasta cooking water, parmesan, and stir well
+        \n- Drain and add pasta to the skillet
+        \n- Toss until well combined, adding some pasta water if needed</string>
+
+    <!-- Maggi -->
+    <string name="maggiIngredients">- Maggi Noodles
+        \n- Water
+        \n- Maggi Masala</string>
+    <string name="maggieDesc">- Add one and half cup of water
+        \n- Add maggi noodles and boil it
+        \n- Add the maggi masala on to it
+        \n- Wait for 2 minutes
+        \n- Maggi is ready!</string>
+
+    <!-- Cake -->
+    <string name="cakeIngredients">- Cake
+        \n- Water
+        \n- 1 cup white sugar
+        \n- 2 large eggs
+        \n- 1/2 cup milk</string>
+    <string name="cakeDesc">- Preheat the oven to 350 degrees F (175 degrees C).
+        \n- Grease and flour a 9-inch square cake pan.
+        \n- Cream sugar and butter together in a mixing bowl.
+        \n- Combine flour and baking powder in a separate bowl.
+        \n- Pour batter into the prepared cake pan.
+        \n- Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes.
+        \n- Remove from the oven and cool completely. Frost and enjoy!</string>
+
+    <!-- Pancake -->
+    <string name="pancakeIngredients">- Pancake
+        \n- 1/2 cups all-purpose flour
+        \n- 1/2 teaspoons baking powder
+        \n- 1 tablespoon white sugar
+        \n- 3 tablespoons butter, melted
+        \n- egg</string>
+    <string name="pancakeDesc">- Sift flour, baking powder, sugar, and salt together in a large bowl.
+        \n- Heat a lightly oiled griddle or pan over medium-high heat.
+        \n- Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes.
+        \n- Flip and cook until browned on the other side.
+        \n- Repeat with remaining batter.</string>
+
+    <!-- Pizza -->
+    <string name="pizzaIngredients">- Pizza
+        \n- 1 1/2 cups (355 ml) warm water (105°F-115°F)
+        \n- 1 package (2 1/4 teaspoons) active dry yeast
+        \n- 3 3/4 cups (490g) bread flour
+        \n- 2 tablespoons extra virgin olive oil (omit if cooking pizza in a wood-fired pizza oven)
+        \n- 2 teaspoons kosher salt
+        \n- 1 teaspoon sugar</string>
+    <string name="pizzaDesc">- Add one and half cup of water
+        \n- Preheat the pizza stone (or pizza pan or baking sheet): Place a pizza stone on a rack in the lower third of your oven. Preheat the oven to 475°F for at least 30 minutes, preferably an hour.
+        \n- Divide the dough into 2 balls: Remove the plastic cover from the dough. Dust your hands with flour and push the dough down so it deflates a bit. Divide the dough in half.
+        \n- Prep the toppings: Prepare your desired toppings. Note that you are not going to want to load up each pizza with a lot of toppings as the crust will end up not crisp that way.
+        \n- Flatten the dough ball, and stretch out into a round: Working one ball of dough at a time, take one ball of dough and flatten it with your hands on a lightly floured work surface.
+        \n- Brush the dough top with olive oil: Use your fingertips to press down and make dents along the surface of the dough to prevent bubbling.
+        \n- Sprinkle the pizza peel with cornmeal, put flattened dough on top: Lightly sprinkle your pizza peel (or flat baking sheet) with cornmeal.
+        \n- Bake: Bake pizza in the 475°F oven, one at a time, until the crust is browned and the cheese is golden, about 10 to 15 minutes.</string>
+
+    <!-- Burgers -->
+    <string name="burgerIngredients">- Burger
+        \n- 1 pound (453 grams) 80% lean ground beef/chuck
+        \n- 6 burger buns
+        \n- 1 egg yolk
+        \n- 1/2 small red or white onion
+        \n- Ketchup
+        \n- Handful fresh herbs, chopped roughly
+        \n- 2 thinly sliced tomatoes
+        \n- 6 slices of cheese
+        \n- Lettuce leaves</string>
+    <string name="burgerDesc">- Divide the ground beef. Divide the ground beef into 4 or 6 portions, depending on the number of burgers you would like to make.
+        \n- Shape the patties. Gently press each portion of ground beef into a disk about 1-inch thick.
+        \n- Warm the pan. Heat a pat of butter or a teaspoon of oil in a griddle or large skillet over medium heat.
+        \n- Toast the buns. Working in batches if needed, place the bun halves cut-side down in the warm butter or oil. Toast until the surface is golden-brown.
+        \n- Increase the heat to medium-high. Increase the heat to medium-high, and keep a careful eye on the pan.
+        \n- Cook the burgers. Place the burger patties in the hot pan, leaving a little space between each one. Work in batches if necessary.
+        \n- Flip the burgers. Quickly slide a spatula under the burgers and flip to the other side.
+        \n- To make cheeseburgers. If making cheeseburgers, top the burgers with cheese as soon as you flip them.
+        \n- Finish the burgers. When the burgers have finished cooking, transfer them to the toasted buns and finish with your favorite burger toppings.</string>
+
+    <!-- Fries -->
+    <string name="friesIngredients">- French Fries
+        \n- 2 cups warm water
+        \n- 1/3 cup white sugar
+        \n- Large russet potatoes - peeled, and sliced into 1/4 inch strips
+        \n- 6 cups vegetable oil for frying
+        \n- Salt to taste</string>
+    <string name="friesDesc">- Cut the potatoes
+        \n- Soak the potatoes
+        \n- Drain and dry the potatoes
+        \n- Fry the potatoes
+        \n- Drain and cool the half-done fries
+        \n- Fry the potatoes again
+        \n- Drain the fries
+        \n- Serve your homemade French fries</string>
+
+    <string name="load_more"></string>
+    <string name="title_activity_food_detail">Food Detail</string>
+
 </resources>

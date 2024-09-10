@@ -28,6 +28,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ui.explore.FoodDetail"
+            android:exported="false"
+            android:label="@string/title_activity_food_detail"
+            android:theme="@style/Theme.NutritionRecipe" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
 
