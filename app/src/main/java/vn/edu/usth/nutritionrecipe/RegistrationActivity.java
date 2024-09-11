@@ -63,7 +63,7 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    register(v); // Call the register method directly
+                    register(v);
                     return true;
                 }
                 return false;

@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
                     if (validateInput()) {
-                        login(v); // Call the login method directly
+                        login(v);
                         return true;
                     } else {
                         showError();
