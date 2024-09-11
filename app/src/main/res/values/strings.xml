@@ -117,7 +117,7 @@
         \n- Drain the fries
         \n- Serve your homemade French fries</string>
 
-    <string name="load_more"></string>
+    <string name="load_more">Load More</string>
     <string name="title_activity_food_detail">Food Detail</string>
 
 </resources>
