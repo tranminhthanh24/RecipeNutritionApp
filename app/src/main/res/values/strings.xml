@@ -1,10 +1,18 @@
 <resources>
-    <string name="app_name">Recipe Book</string>
+    <string name="app_name">USTH Recipe App</string>
     <string name="title_home">Home</string>
     <string name="title_explore">Explore</string>
     <string name="title_favorite">Favorite</string>
-
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="background_image">background image</string>
+    <string name="register">Register</string>
+    <string name="sign_in">Sign-in</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="re_enter_password">Re-enter password</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_in_as_guest">Sign-in as guest</string>
 
     <!-- Pasta -->
     <string name="pastaIngredients">- Pasta
@@ -109,7 +117,7 @@
         \n- Drain the fries
         \n- Serve your homemade French fries</string>
 
-    <string name="load_more"></string>
+    <string name="load_more">Load More</string>
     <string name="title_activity_food_detail">Food Detail</string>
 
 </resources>

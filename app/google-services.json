@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "52236271474",
+    "project_id": "nutrition-recipe-9f77e",
+    "storage_bucket": "nutrition-recipe-9f77e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52236271474:android:6fc896d4c9c1e39aa767eb",
+        "android_client_info": {
+          "package_name": "vn.edu.usth.nutritionrecipe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc5D_Ap4Xe29lGjQEtM8pA7hnvI7fdZOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
