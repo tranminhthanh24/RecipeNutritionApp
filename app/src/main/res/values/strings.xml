@@ -14,108 +14,695 @@
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="sign_in_as_guest">Sign-in as guest</string>
 
-    <!-- Pasta -->
-    <string name="pastaIngredients">- Pasta
-        \n- Cream Cheese
-        \n- Parmesan Cheese
-        \n- Olive Oil
-        \n- Garlic
-        \n- Salt Pepper</string>
-    <string name="pastaDesc">- Cook your pasta until it dense
-        \n- Add cream cheese, pasta cooking water, parmesan, and stir well
-        \n- Drain and add pasta to the skillet
-        \n- Toss until well combined, adding some pasta water if needed</string>
 
     <!-- Maggi -->
-    <string name="maggiIngredients">- Maggi Noodles
-        \n- Water
-        \n- Maggi Masala</string>
-    <string name="maggieDesc">- Add one and half cup of water
-        \n- Add maggi noodles and boil it
-        \n- Add the maggi masala on to it
-        \n- Wait for 2 minutes
-        \n- Maggi is ready!</string>
+    <string name="maggiIngredients">
+    - 1 pack Maggi noodles
+    \n- 1 1/2 cups water
+    \n- 1/4 cup chopped onions
+    \n- 1/4 cup chopped tomatoes
+    \n- 1 green chili, chopped
+    \n- 1/4 teaspoon turmeric powder
+    \n- 1/4 teaspoon red chili powder
+    \n- 1 tablespoon oil
+    \n- Fresh coriander for garnish
+    \n- Salt to taste</string>
+    <string name="maggiDesc">
+    - Heat oil in a pan, sauté onions and green chili until soft
+    \n- Add chopped tomatoes and cook until they soften
+    \n- Add turmeric powder, red chili powder, and salt, mix well
+    \n- Pour in 1 1/2 cups of water and bring to a boil
+    \n- Add Maggi noodles and the spice packet that comes with it
+    \n- Cook for 2-3 minutes, stirring occasionally
+    \n- Let the water reduce until noodles are cooked through
+    \n- Garnish with fresh coriander
+    \n- Serve hot and enjoy your flavorful Maggi
+    \n- Perfect as a quick meal or snack</string>
 
-    <!-- Cake -->
-    <string name="cakeIngredients">- Cake
-        \n- Water
-        \n- 1 cup white sugar
+    <!-- Makizushi -->
+    <string name="makizushiIngredients">
+    - 2 cups sushi rice
+    \n- 3 tablespoons rice vinegar
+    \n- 1 tablespoon sugar
+    \n- 1/2 teaspoon salt
+    \n- 4 sheets nori (seaweed)
+    \n- 1 cucumber, julienned
+    \n- 1 avocado, sliced
+    \n- 200g fresh tuna or salmon, sliced
+    \n- Soy sauce for dipping
+    \n- Wasabi and pickled ginger for serving</string>
+    <string name="makizushiDesc">
+    - Cook sushi rice according to package instructions
+    \n- Mix rice vinegar, sugar, and salt, then stir into cooked rice
+    \n- Place a sheet of nori on a bamboo sushi mat
+    \n- Spread a thin layer of rice on the nori, leaving space at the top edge
+    \n- Place cucumber, avocado, and fish in the center of the rice
+    \n- Roll the sushi tightly using the mat, pressing gently
+    \n- Slice the roll into bite-sized pieces with a sharp knife
+    \n- Serve with soy sauce, wasabi, and pickled ginger
+    \n- Enjoy your fresh homemade makizushi</string>
+
+    <!-- Penang Asam Laksa -->
+    <string name="penangAsamLaksaIngredients">
+    - 300g mackerel, boiled and flaked
+    \n- 4 cups tamarind juice
+    \n- 1 stalk lemongrass, bruised
+    \n- 2 tablespoons chili paste
+    \n- 1 onion, sliced
+    \n- 1 cucumber, julienned
+    \n- 1 pineapple, diced
+    \n- 200g rice noodles
+    \n- Fresh mint leaves for garnish
+    \n- Fish sauce to taste</string>
+    <string name="penangAsamLaksaDesc">
+    - In a pot, bring tamarind juice, lemongrass, and chili paste to a boil
+    \n- Add flaked mackerel and simmer for 10 minutes
+    \n- Cook rice noodles according to package instructions
+    \n- Divide noodles into bowls and pour the soup over them
+    \n- Top with cucumber, pineapple, onion, and mint leaves
+    \n- Add fish sauce to taste
+    \n- Serve hot with additional chili paste if desired
+    \n- Enjoy the tangy, spicy flavors of Penang Asam Laksa</string>
+
+    <!-- Sauerbraten -->
+    <string name="sauerbratenIngredients">
+    - 1.5kg beef roast
+    \n- 2 cups red wine vinegar
+    \n- 1 cup water
+    \n- 1 onion, chopped
+    \n- 2 cloves garlic, minced
+    \n- 2 bay leaves
+    \n- 1 teaspoon peppercorns
+    \n- 1/2 teaspoon cloves
+    \n- 2 tablespoons sugar
+    \n- Gingersnap cookies for thickening sauce</string>
+    <string name="sauerbratenDesc">
+    - In a large bowl, mix vinegar, water, onion, garlic, bay leaves, peppercorns, cloves, and sugar
+    \n- Submerge the beef roast in the marinade and refrigerate for 3-5 days
+    \n- Remove the roast from the marinade and pat dry
+    \n- Brown the roast in a large pot, then add the marinade
+    \n- Cover and simmer for 3-4 hours until the meat is tender
+    \n- Crush gingersnap cookies and stir into the sauce to thicken
+    \n- Slice the roast and serve with the rich sauce
+    \n- Enjoy your hearty and flavorful Sauerbraten</string>
+
+
+    <!-- Red Velvet Cake -->
+    <string name="redVelvetCakeIngredients">
+    - 2 1/2 cups all-purpose flour
+    \n- 1 1/2 cups sugar
+    \n- 1 teaspoon baking soda
+    \n- 1 teaspoon cocoa powder
+    \n- 1 1/2 cups vegetable oil
+    \n- 1 cup buttermilk
+    \n- 2 large eggs
+    \n- 2 tablespoons red food coloring
+    \n- 1 teaspoon vanilla extract
+    \n- Cream cheese frosting for topping</string>
+    <string name="redVelvetCakeDesc">
+    - Preheat oven to 175°C (350°F) and grease two round cake pans
+    \n- In a large bowl, sift together flour, sugar, baking soda, and cocoa powder
+    \n- In another bowl, mix oil, buttermilk, eggs, food coloring, and vanilla
+    \n- Combine the wet and dry ingredients, stir until smooth
+    \n- Pour batter into cake pans and bake for 30-35 minutes
+    \n- Let the cakes cool completely before removing from pans
+    \n- Frost the cake with cream cheese frosting
+    \n- Slice and serve your rich, moist Red Velvet Cake
+    \n- Enjoy this classic, decadent dessert</string>
+
+    <!-- Crêpe -->
+    <string name="crepeIngredients">
+    - 1 cup all-purpose flour
+    \n- 2 large eggs
+    \n- 1 1/2 cups milk
+    \n- 1 tablespoon melted butter
+    \n- 1 tablespoon sugar (optional)
+    \n- Pinch of salt
+    \n- 1 teaspoon vanilla extract
+    \n- Butter for greasing pan
+    \n- Nutella or jam for filling
+    \n- Powdered sugar for garnish</string>
+    <string name="crepeDesc">
+    - In a bowl, whisk together flour, eggs, milk, butter, sugar, and vanilla extract
+    \n- Let the batter rest for 15-20 minutes
+    \n- Heat a non-stick pan and grease lightly with butter
+    \n- Pour a thin layer of batter into the pan, swirling to spread evenly
+    \n- Cook for 1-2 minutes on each side until golden brown
+    \n- Fill with Nutella, jam, or your favorite fillings
+    \n- Roll or fold the crêpe and dust with powdered sugar
+    \n- Serve and enjoy this light, delicious treat</string>
+
+    <!-- Turkey Burger -->
+    <string name="turkeyBurgerIngredients">
+    - 500g ground turkey
+    \n- 1/4 cup breadcrumbs
+    \n- 1 egg
+    \n- 1 small onion, finely chopped
+    \n- 1 tablespoon Dijon mustard
+    \n- 1 teaspoon garlic powder
+    \n- Salt and pepper to taste
+    \n- 2 tablespoons olive oil
+    \n- Burger buns
+    \n- Toppings: lettuce, tomato, cheese</string>
+    <string name="turkeyBurgerDesc">
+    - In a bowl, mix ground turkey, breadcrumbs, egg, onion, mustard, garlic powder, salt, and pepper
+    \n- Form the mixture into patties
+    \n- Heat olive oil in a skillet over medium heat
+    \n- Cook the turkey patties for 5-6 minutes on each side until cooked through
+    \n- Toast burger buns in the same skillet
+    \n- Assemble burgers with your favorite toppings like lettuce, tomato, and cheese
+    \n- Serve hot and enjoy your healthy turkey burgers
+    \n- Perfect for a quick lunch or dinner</string>
+
+    <!-- Crinkle-cut Fries -->
+    <string name="crinkleCutFriesIngredients">
+    - 4 large potatoes
+    \n- 2 tablespoons olive oil
+    \n- 1/2 teaspoon sea salt
+    \n- 1/4 teaspoon black pepper
+    \n- 1/2 teaspoon paprika
+    \n- 1/4 teaspoon garlic powder
+    \n- Fresh parsley for garnish
+    \n- Ketchup for dipping
+    \n- Oil for frying
+    \n- Salt to taste</string>
+    <string name="crinkleCutFriesDesc">
+    - Peel and cut potatoes into crinkle-cut fries using a crinkle cutter
+    \n- Soak the fries in cold water for 30 minutes, then pat dry
+    \n- Heat oil in a deep fryer or pan
+    \n- Fry the fries in batches until golden and crispy
+    \n- Drain on paper towels and season with sea salt, pepper, and paprika
+    \n- Garnish with fresh parsley and serve with ketchup
+    \n- Enjoy your crispy crinkle-cut fries
+    \n- Perfect as a snack or side dish</string>
+
+    <!-- Arepas -->
+    <string name="arepasIngredients">
+        - 2 cups pre-cooked cornmeal (harina P.A.N.)
+        \n- 2 1/2 cups warm water
+        \n- 1 teaspoon salt
+        \n- 2 tablespoons vegetable oil
+        \n- Butter for cooking
+        \n- Cheese for filling (optional)
+        \n- Avocado for serving (optional)
+        \n- Shredded chicken for serving (optional)
+        \n- Black beans for serving (optional)
+        \n- Salsa for serving (optional)</string>
+    <string name="arepasDesc">
+        - In a large bowl, mix the cornmeal, warm water, and salt
+        \n- Let the dough rest for 5 minutes until it firms up
+        \n- Knead the dough with your hands until smooth
+        \n- Divide the dough into small balls and flatten into thick discs
+        \n- Heat oil or butter in a skillet over medium heat
+        \n- Cook the arepas for about 5 minutes on each side until golden brown
+        \n- Slice the cooked arepas in half to create pockets
+        \n- Fill with cheese, avocado, chicken, or black beans as desired
+        \n- Serve hot with salsa or any other topping of your choice
+        \n- Enjoy freshly made arepas for breakfast or dinner</string>
+
+
+    <!-- Butter Garlic Crab -->
+    <string name="butterGarlicCrabIngredients">
+        - 1 kg fresh crab, cleaned and cracked
+        \n- 4 tablespoons butter
+        \n- 6 cloves garlic, minced
+        \n- 1 tablespoon lemon juice
+        \n- 2 tablespoons chopped parsley
+        \n- 1/2 teaspoon chili flakes
+        \n- Salt to taste
+        \n- Black pepper to taste
+        \n- 1/4 cup water or seafood broth
+        \n- Lemon wedges for garnish</string>
+    <string name="butterGarlicCrabDesc">
+        - Clean and crack the crabs
+        \n- Melt the butter in a large pan over medium heat
+        \n- Add the minced garlic and sauté until fragrant
+        \n- Stir in the lemon juice, parsley, and chili flakes
+        \n- Add the cracked crabs and stir to coat them in the butter mixture
+        \n- Pour in water or seafood broth, cover, and cook for 5-7 minutes
+        \n- Season with salt and pepper to taste
+        \n- Uncover and cook for another 2-3 minutes until the sauce thickens
+        \n- Serve the crabs hot with lemon wedges for garnish
+        \n- Enjoy the crabs with bread or rice</string>
+
+    <!-- Chicken Parmesan -->
+    <string name="chickenParmIngredients">
+        - 4 boneless, skinless chicken breasts
+        \n- 1 cup breadcrumbs
+        \n- 1/2 cup grated Parmesan cheese
         \n- 2 large eggs
-        \n- 1/2 cup milk</string>
-    <string name="cakeDesc">- Preheat the oven to 350 degrees F (175 degrees C).
-        \n- Grease and flour a 9-inch square cake pan.
-        \n- Cream sugar and butter together in a mixing bowl.
-        \n- Combine flour and baking powder in a separate bowl.
-        \n- Pour batter into the prepared cake pan.
-        \n- Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes.
-        \n- Remove from the oven and cool completely. Frost and enjoy!</string>
+        \n- 1 cup marinara sauce
+        \n- 1 1/2 cups mozzarella cheese, shredded
+        \n- 1/2 teaspoon garlic powder
+        \n- Salt to taste
+        \n- Black pepper to taste
+        \n- Fresh basil leaves for garnish</string>
+    <string name="chickenParmDesc">
+        - Preheat oven to 375°F (190°C)
+        \n- Pound chicken breasts to even thickness
+        \n- Season chicken with salt, pepper, and garlic powder
+        \n- Beat eggs in a shallow dish and dip the chicken in eggs
+        \n- Mix breadcrumbs and Parmesan cheese in another dish
+        \n- Coat the chicken in the breadcrumb mixture
+        \n- Fry chicken in a pan with oil until golden brown
+        \n- Place chicken in a baking dish, top with marinara sauce
+        \n- Sprinkle mozzarella cheese on top and bake for 20 minutes
+        \n- Garnish with fresh basil and serve hot</string>
 
-    <!-- Pancake -->
-    <string name="pancakeIngredients">- Pancake
-        \n- 1/2 cups all-purpose flour
-        \n- 1/2 teaspoons baking powder
-        \n- 1 tablespoon white sugar
-        \n- 3 tablespoons butter, melted
-        \n- egg</string>
-    <string name="pancakeDesc">- Sift flour, baking powder, sugar, and salt together in a large bowl.
-        \n- Heat a lightly oiled griddle or pan over medium-high heat.
-        \n- Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes.
-        \n- Flip and cook until browned on the other side.
-        \n- Repeat with remaining batter.</string>
+    <!-- Chicken Rice -->
+    <string name="chickenRiceIngredients">
+        - 1 whole chicken (about 1.5 kg)
+        \n- 3 cups jasmine rice
+        \n- 6 cloves garlic, minced
+        \n- 1 thumb-sized piece of ginger, sliced
+        \n- 4 stalks green onions, chopped
+        \n- 4 cups chicken broth
+        \n- 2 tablespoons sesame oil
+        \n- Salt to taste
+        \n- Soy sauce for serving
+        \n- Chili sauce for serving</string>
+    <string name="chickenRiceDesc">
+        - Clean and prepare the chicken
+        \n- Boil the chicken in water with ginger and salt for 45 minutes
+        \n- Remove chicken, brush with sesame oil, and set aside
+        \n- Sauté garlic and ginger in oil until fragrant
+        \n- Add jasmine rice and stir to coat in oil
+        \n- Pour in chicken broth, bring to a boil, and simmer until rice is cooked
+        \n- Chop the boiled chicken into bite-sized pieces
+        \n- Serve chicken over rice with soy sauce and chili sauce on the side
+        \n- Garnish with chopped green onions
+        \n- Enjoy your chicken rice with sliced cucumbers</string>
+
+    <!-- Chili Crab -->
+    <string name="chiliCrabIngredients">
+        1 kg fresh crab, cleaned and cracked
+        \n- 4 tablespoons vegetable oil
+        \n- 5 cloves garlic, minced
+        \n- 3 red chilies, chopped
+        \n- 1/4 cup tomato paste
+        \n- 1/4 cup ketchup
+        \n- 1 tablespoon soy sauce
+        \n- 1 tablespoon sugar
+        \n- 1/2 cup water
+        \n- 1 egg, lightly beaten</string>
+    <string name="chiliCrabDesc">
+        - Clean and crack the crabs
+        \n- Heat oil in a large wok over medium heat
+        \n- Add garlic and chilies, sauté until fragrant
+        \n- Stir in tomato paste, ketchup, soy sauce, and sugar
+        \n- Add water and bring the sauce to a simmer
+        \n- Add the crabs, stir to coat them in the sauce
+        \n- Cover and cook for 10-12 minutes until crabs are cooked
+        \n- Stir in the beaten egg slowly to thicken the sauce
+        \n- Serve hot with steamed rice or fried buns
+        \n- Garnish with fresh cilantro and enjoy</string>
+
+    <!-- Croissant -->
+    <string name="croissantIngredients">
+        2 1/4 cups (270g) all-purpose flour
+        \n- 1/4 cup (60g) sugar
+        \n- 1 teaspoon salt
+        \n- 1 tablespoon instant yeast
+        \n- 1/2 cup (120ml) warm milk
+        \n- 1 cup (225g) unsalted butter, chilled
+        \n- 1 large egg
+        \n- 1 tablespoon water
+        \n- 1 teaspoon vanilla extract
+        \n- Extra flour for dusting</string>
+    <string name="croissantDesc">
+        - Combine flour, sugar, salt, and yeast in a bowl
+        \n- Add warm milk and mix to form a dough
+        \n- Roll out dough and place chilled butter in the center
+        \n- Fold dough over the butter and roll out again
+        \n- Repeat folding and rolling process 3-4 times
+        \n- Cut dough into triangles and roll into croissant shapes
+        \n- Place croissants on a baking sheet and let rise for 1 hour
+        \n- Brush with egg wash (egg mixed with water) before baking
+        \n- Bake at 375°F (190°C) for 20-25 minutes until golden brown
+        \n- Enjoy warm croissants with butter or jam</string>
+
+    <!-- Fajitas -->
+    <string name="fajitasIngredients">
+        - 500g chicken breast, sliced
+        \n- 2 bell peppers, sliced
+        \n- 1 large onion, sliced
+        \n- 2 tablespoons olive oil
+        \n- 1 tablespoon fajita seasoning
+        \n- 1 teaspoon cumin powder
+        \n- 1 teaspoon chili powder
+        \n- 8 flour tortillas
+        \n- Sour cream for serving
+        \n- Salsa for serving</string>
+    <string name="fajitasDesc">
+        - Heat oil in a large pan over medium-high heat
+        \n- Sauté chicken until browned, then add fajita seasoning, cumin, and chili powder
+        \n- Add sliced bell peppers and onions, stir-fry until vegetables are tender
+        \n- Warm the flour tortillas on a pan or in the oven
+        \n- Spoon the chicken and vegetable mixture onto each tortilla
+        \n- Top with sour cream and salsa
+        \n- Fold the tortillas to make fajitas
+        \n- Serve hot with guacamole or extra salsa
+        \n- Enjoy your flavorful fajitas with lime wedges</string>
+
+    <!-- Fish and Chips -->
+    <string name="fishAndChipsIngredients">
+        - 500g cod or haddock fillets
+        \n- 1 cup all-purpose flour
+        \n- 1/2 cup cornstarch
+        \n- 1 teaspoon baking powder
+        \n- 1 cup cold beer or soda water
+        \n- Salt to taste
+        \n- Black pepper to taste
+        \n- 4 large potatoes, cut into fries
+        \n- Oil for frying
+        \n- Lemon wedges for garnish</string>
+    <string name="fishAndChipsDesc">
+        - Peel and cut potatoes into fries
+        \n- Heat oil in a deep fryer or large pot
+        \n- Fry the potatoes until golden and crispy, then drain on paper towels
+        \n- Season the fish fillets with salt and pepper
+        \n- Mix flour, cornstarch, and baking powder in a bowl
+        \n- Gradually add cold beer or soda water to make the batter
+        \n- Dip the fish fillets in the batter and fry until golden brown
+        \n- Serve hot with the fries and lemon wedges
+        \n- Add tartar sauce or malt vinegar on the side</string>
+
+    <!-- Gỏi Cuốn (Vietnamese Spring Rolls) -->
+    <string name="goiCuonIngredients">
+        200g shrimp, peeled and deveined
+        \n- 200g pork belly, boiled and sliced
+        \n- 100g rice vermicelli noodles
+        \n- 12 rice paper wrappers
+        \n- Fresh lettuce leaves
+        \n- Fresh mint leaves
+        \n- Fresh coriander leaves
+        \n- 1 cucumber, julienned
+        \n- 1 carrot, julienned
+        \n- Peanut sauce for dipping</string>
+    <string name="goiCuonDesc">
+        - Boil the shrimp until cooked and set aside
+        \n- Boil the pork belly and slice thinly
+        \n- Cook the rice vermicelli noodles and drain
+        \n- Dip each rice paper wrapper in warm water to soften
+        \n- Place lettuce, mint, coriander, cucumber, and carrot on the wrapper
+        \n- Add a few shrimp and pork slices on top of the vegetables
+        \n- Roll the wrapper tightly, folding in the sides as you go
+        \n- Repeat the process for all the rolls
+        \n- Serve the spring rolls with peanut dipping sauce
+        \n- Enjoy fresh and healthy Gỏi Cuốn</string>
+
+    <!-- Hummus -->
+    <string name="hummusIngredients">
+        1 can (400g) chickpeas, drained and rinsed
+        \n- 2 tablespoons tahini
+        \n- 2 tablespoons olive oil
+        \n- 1 clove garlic, minced
+        \n- 1/4 cup fresh lemon juice
+        \n- 1/2 teaspoon ground cumin
+        \n- Salt to taste
+        \n- Black pepper to taste
+        \n- Paprika for garnish
+        \n- Fresh parsley for garnish</string>
+    <string name="hummusDesc">
+        - Combine chickpeas, tahini, olive oil, and garlic in a food processor
+        \n- Add lemon juice and cumin, blend until smooth
+        \n- If the hummus is too thick, add a bit of water to achieve desired consistency
+        \n- Season with salt and pepper to taste
+        \n- Transfer to a serving dish
+        \n- Drizzle with extra olive oil on top
+        \n- Sprinkle with paprika and garnish with parsley
+        \n- Serve with pita bread or fresh vegetables
+        \n- Enjoy your creamy homemade hummus</string>
+
+    <!-- Lasagna -->
+    <string name="lasagnaIngredients">
+    - 12 lasagna noodles
+    \n- 500g ground beef
+    \n- 1 onion, chopped
+    \n- 3 cloves garlic, minced
+    \n- 800g canned tomatoes, crushed
+    \n- 500g ricotta cheese
+    \n- 2 cups mozzarella cheese, shredded
+    \n- 1/2 cup grated Parmesan cheese
+    \n- Fresh basil leaves for garnish
+    \n- Salt and pepper to taste</string>
+    <string name="lasagnaDesc">
+    - Preheat oven to 180°C (350°F)
+    \n- Cook lasagna noodles according to package instructions
+    \n- In a large pan, sauté ground beef, onion, and garlic until browned
+    \n- Stir in crushed tomatoes, simmer for 15 minutes
+    \n- In a bowl, mix ricotta cheese with salt and pepper
+    \n- In a baking dish, layer noodles, meat sauce, ricotta, and mozzarella
+    \n- Repeat layers, finishing with mozzarella and Parmesan on top
+    \n- Bake for 30-40 minutes until cheese is bubbly and golden
+    \n- Let the lasagna cool for 10 minutes before serving
+    \n- Garnish with fresh basil and enjoy your delicious lasagna</string>
+
+    <!-- Masala Dosa -->
+    <string name="masalaDosaIngredients">
+    - 1 cup rice
+    \n- 1/2 cup urad dal (black gram)
+    \n- 2 boiled potatoes, mashed
+    \n- 1 onion, sliced
+    \n- 2 green chilies, chopped
+    \n- 1/2 teaspoon mustard seeds
+    \n- Curry leaves for garnish
+    \n- 1/2 teaspoon turmeric powder
+    \n- Oil for cooking
+    \n- Salt to taste</string>
+    <string name="masalaDosaDesc">
+    - Soak rice and urad dal for 4-6 hours, then grind to a smooth batter
+    \n- Ferment batter overnight
+    \n- Heat oil in a pan, add mustard seeds, curry leaves, and onions
+    \n- Add mashed potatoes, green chilies, and turmeric, mix well
+    \n- Heat a tawa, pour batter to form thin crepes
+    \n- Spread potato filling inside dosa
+    \n- Fold the dosa and cook until crispy
+    \n- Serve with coconut chutney and sambar
+    \n- Enjoy your delicious South Indian masala dosa</string>
+
+    <!-- Pasta -->
+    <string name="pastaIngredients">
+    - 300g pasta of choice
+    \n- 2 tablespoons olive oil
+    \n- 2 cloves garlic, minced
+    \n- 400g canned tomatoes, crushed
+    \n- 1 teaspoon dried basil
+    \n- 1 teaspoon dried oregano
+    \n- 1/4 teaspoon red pepper flakes
+    \n- 1/4 cup grated Parmesan cheese
+    \n- Fresh basil for garnish
+    \n- Salt and pepper to taste</string>
+    <string name="pastaDesc">
+    - Cook pasta according to package instructions
+    \n- Heat olive oil in a pan, add garlic and sauté until fragrant
+    \n- Add crushed tomatoes, dried basil, oregano, and red pepper flakes
+    \n- Simmer sauce for 15 minutes, stirring occasionally
+    \n- Season with salt and pepper to taste
+    \n- Toss cooked pasta with the sauce
+    \n- Sprinkle Parmesan cheese on top
+    \n- Garnish with fresh basil
+    \n- Serve hot and enjoy your flavorful pasta</string>
+
+    <!-- Pastel de Nata -->
+    <string name="pastelDeNataIngredients">
+    - 1 pack puff pastry
+    \n- 2 cups milk
+    \n- 1 cinnamon stick
+    \n- 1/2 cup sugar
+    \n- 1 tablespoon flour
+    \n- 4 egg yolks
+    \n- 1 teaspoon vanilla extract
+    \n- Powdered sugar for garnish
+    \n- Ground cinnamon for garnish
+    \n- Butter for greasing</string>
+    <string name="pastelDeNataDesc">
+    - Preheat oven to 200°C (390°F)
+    \n- Roll out puff pastry and cut into small circles, place in greased muffin tins
+    \n- In a saucepan, heat milk with cinnamon stick
+    \n- Mix sugar and flour, then whisk in hot milk
+    \n- Cook until thickened, then remove from heat and let cool slightly
+    \n- Stir in egg yolks and vanilla
+    \n- Pour custard into pastry shells
+    \n- Bake for 15-20 minutes until golden brown
+    \n- Sprinkle with powdered sugar and cinnamon before serving
+    \n- Enjoy your delicious Portuguese Pastel de Nata</string>
+
+    <!-- Pierogi -->
+    <string name="pierogiIngredients">
+    - 2 cups flour
+    \n- 1/2 cup sour cream
+    \n- 1 egg
+    \n- 1/4 cup butter, melted
+    \n- 4 boiled potatoes, mashed
+    \n- 1 onion, chopped
+    \n- 1/2 cup cottage cheese
+    \n- 1/4 teaspoon black pepper
+    \n- Salt to taste
+    \n- Butter for frying</string>
+    <string name="pierogiDesc">
+    - In a bowl, mix flour, egg, sour cream, and melted butter to form a dough
+    \n- Roll out dough and cut into circles
+    \n- In a pan, sauté onions and mix with mashed potatoes, cottage cheese, salt, and pepper
+    \n- Place filling in the center of dough circles, fold and seal edges
+    \n- Boil pierogi in salted water until they float
+    \n- Fry pierogi in butter until golden
+    \n- Serve with sour cream or sautéed onions
+    \n- Enjoy your traditional Polish pierogi</string>
+
+    <!-- Piri Piri Chicken -->
+    <string name="piriPiriChickenIngredients">
+    - 1 whole chicken, spatchcocked
+    \n- 4 tablespoons piri piri sauce
+    \n- 2 cloves garlic, minced
+    \n- 1 lemon, juiced
+    \n- 2 tablespoons olive oil
+    \n- 1 teaspoon paprika
+    \n- 1/2 teaspoon cayenne pepper
+    \n- Salt and pepper to taste
+    \n- Fresh parsley for garnish
+    \n- Lemon wedges for serving</string>
+    <string name="piriPiriChickenDesc">
+    - Preheat oven to 200°C (390°F)
+    \n- In a bowl, mix piri piri sauce, garlic, lemon juice, olive oil, paprika, and cayenne pepper
+    \n- Rub the mixture all over the chicken
+    \n- Let it marinate for at least 1 hour
+    \n- Roast the chicken in the oven for 45-50 minutes, basting occasionally
+    \n- Let the chicken rest for 10 minutes before serving
+    \n- Garnish with fresh parsley and lemon wedges
+    \n- Serve with rice or fries and enjoy your spicy piri piri chicken</string>
 
     <!-- Pizza -->
-    <string name="pizzaIngredients">- Pizza
-        \n- 1 1/2 cups (355 ml) warm water (105°F-115°F)
-        \n- 1 package (2 1/4 teaspoons) active dry yeast
-        \n- 3 3/4 cups (490g) bread flour
-        \n- 2 tablespoons extra virgin olive oil (omit if cooking pizza in a wood-fired pizza oven)
-        \n- 2 teaspoons kosher salt
-        \n- 1 teaspoon sugar</string>
-    <string name="pizzaDesc">- Add one and half cup of water
-        \n- Preheat the pizza stone (or pizza pan or baking sheet): Place a pizza stone on a rack in the lower third of your oven. Preheat the oven to 475°F for at least 30 minutes, preferably an hour.
-        \n- Divide the dough into 2 balls: Remove the plastic cover from the dough. Dust your hands with flour and push the dough down so it deflates a bit. Divide the dough in half.
-        \n- Prep the toppings: Prepare your desired toppings. Note that you are not going to want to load up each pizza with a lot of toppings as the crust will end up not crisp that way.
-        \n- Flatten the dough ball, and stretch out into a round: Working one ball of dough at a time, take one ball of dough and flatten it with your hands on a lightly floured work surface.
-        \n- Brush the dough top with olive oil: Use your fingertips to press down and make dents along the surface of the dough to prevent bubbling.
-        \n- Sprinkle the pizza peel with cornmeal, put flattened dough on top: Lightly sprinkle your pizza peel (or flat baking sheet) with cornmeal.
-        \n- Bake: Bake pizza in the 475°F oven, one at a time, until the crust is browned and the cheese is golden, about 10 to 15 minutes.</string>
+    <string name="pizzaIngredients">
+    - 2 cups all-purpose flour
+    \n- 1 teaspoon yeast
+    \n- 1/2 teaspoon salt
+    \n- 1 cup warm water
+    \n- 2 tablespoons olive oil
+    \n- 1/2 cup pizza sauce
+    \n- 1 cup mozzarella cheese, shredded
+    \n- Toppings of choice (pepperoni, mushrooms, bell peppers)
+    \n- Fresh basil leaves
+    \n- Olive oil for brushing</string>
+    <string name="pizzaDesc">
+    - Preheat oven to 220°C (430°F)
+    \n- In a bowl, mix flour, yeast, salt, water, and olive oil to form dough
+    \n- Let the dough rise for 1 hour
+    \n- Roll out the dough on a floured surface
+    \n- Spread pizza sauce over the dough
+    \n- Add mozzarella cheese and desired toppings
+    \n- Bake in the oven for 15-20 minutes until the crust is golden
+    \n- Brush with olive oil and garnish with fresh basil
+    \n- Slice and enjoy your homemade pizza</string>
 
-    <!-- Burgers -->
-    <string name="burgerIngredients">- Burger
-        \n- 1 pound (453 grams) 80% lean ground beef/chuck
-        \n- 6 burger buns
-        \n- 1 egg yolk
-        \n- 1/2 small red or white onion
-        \n- Ketchup
-        \n- Handful fresh herbs, chopped roughly
-        \n- 2 thinly sliced tomatoes
-        \n- 6 slices of cheese
-        \n- Lettuce leaves</string>
-    <string name="burgerDesc">- Divide the ground beef. Divide the ground beef into 4 or 6 portions, depending on the number of burgers you would like to make.
-        \n- Shape the patties. Gently press each portion of ground beef into a disk about 1-inch thick.
-        \n- Warm the pan. Heat a pat of butter or a teaspoon of oil in a griddle or large skillet over medium heat.
-        \n- Toast the buns. Working in batches if needed, place the bun halves cut-side down in the warm butter or oil. Toast until the surface is golden-brown.
-        \n- Increase the heat to medium-high. Increase the heat to medium-high, and keep a careful eye on the pan.
-        \n- Cook the burgers. Place the burger patties in the hot pan, leaving a little space between each one. Work in batches if necessary.
-        \n- Flip the burgers. Quickly slide a spatula under the burgers and flip to the other side.
-        \n- To make cheeseburgers. If making cheeseburgers, top the burgers with cheese as soon as you flip them.
-        \n- Finish the burgers. When the burgers have finished cooking, transfer them to the toasted buns and finish with your favorite burger toppings.</string>
+    <!-- Poke -->
+    <string name="pokeIngredients">
+    - 200g fresh tuna or salmon, cubed
+    \n- 1/4 cup soy sauce
+    \n- 1 tablespoon sesame oil
+    \n- 1 teaspoon rice vinegar
+    \n- 1 tablespoon sesame seeds
+    \n- 1/2 avocado, diced
+    \n- 1/4 cup green onions, sliced
+    \n- 1/2 cup cooked rice
+    \n- Seaweed for garnish
+    \n- Chili flakes for spice</string>
+    <string name="pokeDesc">
+    - In a bowl, mix soy sauce, sesame oil, rice vinegar, and sesame seeds
+    \n- Add cubed tuna or salmon to the sauce, marinate for 15 minutes
+    \n- Prepare a bowl with cooked rice as the base
+    \n- Arrange marinated fish, avocado, and green onions on top of the rice
+    \n- Garnish with seaweed and chili flakes
+    \n- Serve immediately and enjoy your fresh poke bowl
+    \n- Customize with additional toppings like cucumber or radish</string>
 
-    <!-- Fries -->
-    <string name="friesIngredients">- French Fries
-        \n- 2 cups warm water
-        \n- 1/3 cup white sugar
-        \n- Large russet potatoes - peeled, and sliced into 1/4 inch strips
-        \n- 6 cups vegetable oil for frying
-        \n- Salt to taste</string>
-    <string name="friesDesc">- Cut the potatoes
-        \n- Soak the potatoes
-        \n- Drain and dry the potatoes
-        \n- Fry the potatoes
-        \n- Drain and cool the half-done fries
-        \n- Fry the potatoes again
-        \n- Drain the fries
-        \n- Serve your homemade French fries</string>
+    <!-- Potato Chips -->
+    <string name="potatoChipsIngredients">
+    - 4 large potatoes, thinly sliced
+    \n- 2 tablespoons olive oil
+    \n- 1/2 teaspoon sea salt
+    \n- 1/4 teaspoon black pepper
+    \n- 1/4 teaspoon paprika
+    \n- 1/4 teaspoon garlic powder
+    \n- 1/4 teaspoon onion powder
+    \n- Fresh parsley for garnish
+    \n- Dipping sauce of choice
+    \n- Oil for frying</string>
+    <string name="potatoChipsDesc">
+    - Soak sliced potatoes in cold water for 30 minutes
+    \n- Pat dry the potatoes with a towel
+    \n- Heat oil in a pan for frying
+    \n- Fry the potato slices until golden and crispy
+    \n- Drain on paper towels and season with salt, pepper, and spices
+    \n- Serve with your favorite dipping sauce
+    \n- Enjoy your homemade crispy potato chips</string>
+
+    <!-- Rendang -->
+    <string name="rendangIngredients">
+    - 500g beef, cubed
+    \n- 2 cups coconut milk
+    \n- 1 onion, chopped
+    \n- 3 cloves garlic, minced
+    \n- 2 tablespoons ground coriander
+    \n- 1 tablespoon turmeric powder
+    \n- 2 stalks lemongrass, bruised
+    \n- 5 dried chilies, soaked and blended
+    \n- 1 cinnamon stick
+    \n- Salt to taste</string>
+    <string name="rendangDesc">
+    - In a pot, heat oil and sauté onions, garlic, and chilies
+    \n- Add beef, cook until browned
+    \n- Stir in coriander, turmeric, and cinnamon stick
+    \n- Add coconut milk and lemongrass, simmer for 2-3 hours
+    \n- Stir occasionally, allowing the sauce to reduce and thicken
+    \n- Season with salt to taste
+    \n- Cook until the beef is tender and the sauce is rich
+    \n- Serve with rice and enjoy your flavorful rendang</string>
+
+    <!-- Seafood Paella -->
+    <string name="seafoodPaellaIngredients">
+    - 2 cups paella rice
+    \n- 500g mixed seafood (shrimp, mussels, squid)
+    \n- 4 cups fish stock
+    \n- 1 onion, chopped
+    \n- 2 cloves garlic, minced
+    \n- 1/2 teaspoon saffron threads
+    \n- 1 teaspoon smoked paprika
+    \n- 1 red bell pepper, chopped
+    \n- Fresh parsley for garnish
+    \n- Lemon wedges for serving</string>
+    <string name="seafoodPaellaDesc">
+    - Heat oil in a large pan, sauté onion, garlic, and bell pepper
+    \n- Add rice and cook for 2 minutes, stirring to coat
+    \n- Pour in fish stock, saffron, and smoked paprika, bring to a boil
+    \n- Reduce heat and simmer for 15 minutes, without stirring
+    \n- Add seafood on top of the rice, cover, and cook for 10 minutes
+    \n- Remove from heat and let the paella rest for 5 minutes
+    \n- Garnish with fresh parsley and serve with lemon wedges
+    \n- Enjoy your delicious seafood paella</string>
+
+    <!-- Som Tam -->
+    <string name="somTamIngredients">
+    - 2 cups shredded green papaya
+    \n- 1 carrot, shredded
+    \n- 2 cloves garlic, minced
+    \n- 1-2 Thai chilies, chopped
+    \n- 2 tablespoons fish sauce
+    \n- 1 tablespoon lime juice
+    \n- 1 tablespoon palm sugar
+    \n- 1/4 cup cherry tomatoes, halved
+    \n- 2 tablespoons roasted peanuts
+    \n- Fresh cilantro for garnish</string>
+    <string name="somTamDesc">
+    - In a mortar, pound garlic, chilies, and palm sugar together
+    \n- Add fish sauce and lime juice, mix well
+    \n- Combine shredded papaya, carrots, and cherry tomatoes in a bowl
+    \n- Pour the dressing over the papaya mixture, toss to combine
+    \n- Sprinkle roasted peanuts on top
+    \n- Garnish with fresh cilantro
+    \n- Serve immediately and enjoy your refreshing Som Tam
+    \n- Pair with sticky rice or grilled meats</string>
+
 
     <string name="load_more">Load More</string>
     <string name="title_activity_food_detail">Food Detail</string>
