@@ -1,4 +1,4 @@
-package vn.edu.usth.nutritionrecipe;
+package vn.edu.usth.nutritionrecipe.activity;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
-import vn.edu.usth.nutritionrecipe.Adapter.AdapterViewPager;
-import vn.edu.usth.nutritionrecipe.ui.explore.ExploreFragment;
-import vn.edu.usth.nutritionrecipe.ui.favorite.FavoriteFragment;
-import vn.edu.usth.nutritionrecipe.ui.home.HomeFragment;
+
+import vn.edu.usth.nutritionrecipe.R;
+import vn.edu.usth.nutritionrecipe.adapter.AdapterViewPager;
+import vn.edu.usth.nutritionrecipe.fragment.ExploreFragment;
+import vn.edu.usth.nutritionrecipe.fragment.FavoriteFragment;
+import vn.edu.usth.nutritionrecipe.fragment.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 

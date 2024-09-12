@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="vn.edu.usth.nutritionrecipe.ui.home.HomeFragment"
+        android:name="vn.edu.usth.nutritionrecipe.fragment.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_explore"
-        android:name="vn.edu.usth.nutritionrecipe.ui.explore.ExploreFragment"
+        android:name="vn.edu.usth.nutritionrecipe.fragment.ExploreFragment"
         android:label="@string/title_explore"
         tools:layout="@layout/fragment_explore" />
 
     <fragment
         android:id="@+id/navigation_favorite"
-        android:name="vn.edu.usth.nutritionrecipe.ui.favorite.FavoriteFragment"
+        android:name="vn.edu.usth.nutritionrecipe.fragment.FavoriteFragment"
         android:label="@string/title_favorite"
         tools:layout="@layout/fragment_favorite" />
 </navigation>

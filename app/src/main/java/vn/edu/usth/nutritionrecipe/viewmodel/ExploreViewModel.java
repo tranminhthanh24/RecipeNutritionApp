@@ -1,16 +1,16 @@
-package vn.edu.usth.nutritionrecipe.ui.favorite;
+package vn.edu.usth.nutritionrecipe.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class FavoriteViewModel extends ViewModel {
+public class ExploreViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public FavoriteViewModel() {
+    public ExploreViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is favorite fragment");
+        mText.setValue("");
     }
 
     public LiveData<String> getText() {

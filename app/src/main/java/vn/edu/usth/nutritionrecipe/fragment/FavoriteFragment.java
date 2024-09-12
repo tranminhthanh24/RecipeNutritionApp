@@ -1,4 +1,4 @@
-package vn.edu.usth.nutritionrecipe.ui.favorite;
+package vn.edu.usth.nutritionrecipe.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import vn.edu.usth.nutritionrecipe.databinding.FragmentFavoriteBinding;
+import vn.edu.usth.nutritionrecipe.viewmodel.FavoriteViewModel;
 
 public class FavoriteFragment extends Fragment {
 

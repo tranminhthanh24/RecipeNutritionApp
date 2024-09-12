@@ -1,4 +1,4 @@
-package vn.edu.usth.nutritionrecipe.ui.home;
+package vn.edu.usth.nutritionrecipe.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

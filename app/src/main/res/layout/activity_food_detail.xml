@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.explore.FoodDetail">
+    tools:context=".object.FoodDetail">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                 android:id="@+id/detailImage"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center"
-                android:src="@drawable/maggi_300x169"
+                android:src="@drawable/maggi"
                 android:scaleType="centerCrop"/>
         </androidx.cardview.widget.CardView>
 

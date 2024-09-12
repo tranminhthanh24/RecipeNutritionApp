@@ -1,4 +1,4 @@
-package vn.edu.usth.nutritionrecipe.Adapter;
+package vn.edu.usth.nutritionrecipe.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

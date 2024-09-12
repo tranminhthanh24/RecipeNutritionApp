@@ -1,11 +1,10 @@
-package vn.edu.usth.nutritionrecipe.ui.explore;
+package vn.edu.usth.nutritionrecipe.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -14,9 +13,11 @@ import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 
-import vn.edu.usth.nutritionrecipe.Adapter.FoodAdapter;
+import vn.edu.usth.nutritionrecipe.adapter.FoodAdapter;
 import vn.edu.usth.nutritionrecipe.R;
 import vn.edu.usth.nutritionrecipe.databinding.FragmentExploreBinding;
+import vn.edu.usth.nutritionrecipe.object.FoodDetail;
+import vn.edu.usth.nutritionrecipe.object.FoodList;
 
 public class ExploreFragment extends Fragment {
 
@@ -31,7 +32,7 @@ public class ExploreFragment extends Fragment {
 
         ListView listView = binding.listView;
 
-        int[] imageList = {R.drawable.pasta, R.drawable.maggi_300x169, R.drawable.cake_300x169, R.drawable.pancake_300x169, R.drawable.pizza_300x169, R.drawable.burger_300x169, R.drawable.fries_300x169};
+        int[] imageList = {R.drawable.pasta, R.drawable.maggi, R.drawable.cake, R.drawable.pancake, R.drawable.pizza, R.drawable.burger, R.drawable.fries};
         int[] ingredientList = {R.string.pastaIngredients, R.string.maggiIngredients, R.string.cakeIngredients, R.string.pancakeIngredients, R.string.pizzaIngredients, R.string.burgerIngredients, R.string.friesIngredients};
         int[] descList = {R.string.pastaDesc, R.string.maggieDesc, R.string.cakeDesc, R.string.pancakeDesc, R.string.pizzaDesc, R.string.burgerDesc, R.string.friesDesc};
         String[] nameList = {"Pasta", "Maggi", "Cake", "Pancake", "Pizza", "Hamburger", "Fries"};
