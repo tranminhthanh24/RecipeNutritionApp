@@ -33,25 +33,21 @@ public class FoodDetail extends AppCompatActivity {
                 int ingredients = intent.getIntExtra("ingredients",  R.string.maggiIngredients);
                 int desc = intent.getIntExtra("desc", R.string.maggieDesc);
                 int image = intent.getIntExtra("image", R.drawable.maggi);
+
                 binding.detailName.setText(name);
                 binding.detailTime.setText(time);
                 binding.detailDesc.setText(desc);
                 binding.detailIngredients.setText(ingredients);
                 binding.detailImage.setImageResource(image);
 
-                // Check favorite status
                 isFavorite = preferences.getBoolean("favorite_" + name, false);
                 updateFavoriteButton();
             }
 
-            Button favButton = binding.favButton; // Initialize the button
-            favButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    isFavorite = !isFavorite; // Toggle favorite status
-                    preferences.edit().putBoolean("favorite_" + name, isFavorite).apply();
-                    updateFavoriteButton();
-                }
+            binding.favButton.setOnClickListener(v -> {
+                isFavorite = !isFavorite; // Toggle favorite status
+                preferences.edit().putBoolean("favorite_" + name, isFavorite).apply();
+                updateFavoriteButton();
             });
         }
 
