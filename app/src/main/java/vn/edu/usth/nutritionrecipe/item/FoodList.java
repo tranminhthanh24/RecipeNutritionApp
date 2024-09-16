@@ -1,4 +1,4 @@
-package vn.edu.usth.nutritionrecipe.object;
+package vn.edu.usth.nutritionrecipe.item;
 public class FoodList {
     public String name;
     public String time;

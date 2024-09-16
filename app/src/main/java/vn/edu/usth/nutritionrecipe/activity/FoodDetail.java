@@ -1,11 +1,10 @@
-package vn.edu.usth.nutritionrecipe.object;
+package vn.edu.usth.nutritionrecipe.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.SharedPreferences;
 import android.content.Intent;
 import android.widget.Button;
-import android.view.View;
 
 import vn.edu.usth.nutritionrecipe.databinding.ActivityFoodDetailBinding;
 import vn.edu.usth.nutritionrecipe.R;
@@ -17,6 +16,7 @@ public class FoodDetail extends AppCompatActivity {
     private Button favButton;
     private boolean isFavorite;
     private String name;
+    private String time;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +28,8 @@ public class FoodDetail extends AppCompatActivity {
             preferences = getSharedPreferences("favorites", MODE_PRIVATE);
 
             if (intent != null){
-                String name = intent.getStringExtra("name");
-                String time = intent.getStringExtra("time");
+                name = intent.getStringExtra("name");
+                time = intent.getStringExtra("time");
                 int ingredients = intent.getIntExtra("ingredients",  R.string.maggiIngredients);
                 int desc = intent.getIntExtra("desc", R.string.maggieDesc);
                 int image = intent.getIntExtra("image", R.drawable.maggi);
@@ -45,7 +45,7 @@ public class FoodDetail extends AppCompatActivity {
             }
 
             binding.favButton.setOnClickListener(v -> {
-                isFavorite = !isFavorite; // Toggle favorite status
+                isFavorite = !isFavorite;
                 preferences.edit().putBoolean("favorite_" + name, isFavorite).apply();
                 updateFavoriteButton();
             });

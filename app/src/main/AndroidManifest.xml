@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".object.FoodDetail"
+            android:name=".activity.FoodDetail"
             android:exported="false"
             android:label="@string/title_activity_food_detail"
             android:theme="@style/Theme.NutritionRecipe" />

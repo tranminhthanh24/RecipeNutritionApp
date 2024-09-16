@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import vn.edu.usth.nutritionrecipe.R;
-import vn.edu.usth.nutritionrecipe.object.FoodList;
+import vn.edu.usth.nutritionrecipe.item.FoodList;
 
 public class FoodAdapter extends ArrayAdapter<FoodList> {
     public FoodAdapter(@NonNull Context context, ArrayList<FoodList> dataArrayList) {

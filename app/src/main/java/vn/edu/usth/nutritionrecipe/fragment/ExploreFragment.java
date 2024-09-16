@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import vn.edu.usth.nutritionrecipe.adapter.FoodAdapter;
 import vn.edu.usth.nutritionrecipe.R;
 import vn.edu.usth.nutritionrecipe.databinding.FragmentExploreBinding;
-import vn.edu.usth.nutritionrecipe.object.FoodDetail;
-import vn.edu.usth.nutritionrecipe.object.FoodList;
+import vn.edu.usth.nutritionrecipe.activity.FoodDetail;
+import vn.edu.usth.nutritionrecipe.item.FoodList;
 
 public class ExploreFragment extends Fragment {
 

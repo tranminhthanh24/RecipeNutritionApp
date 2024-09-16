@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.content.Intent;
 
@@ -17,8 +16,8 @@ import java.util.ArrayList;
 
 import vn.edu.usth.nutritionrecipe.R;
 import vn.edu.usth.nutritionrecipe.adapter.FoodAdapter;
-import vn.edu.usth.nutritionrecipe.object.FoodList;
-import vn.edu.usth.nutritionrecipe.object.FoodDetail;
+import vn.edu.usth.nutritionrecipe.item.FoodList;
+import vn.edu.usth.nutritionrecipe.activity.FoodDetail;
 
 public class FavoriteFragment extends Fragment {
 
@@ -48,7 +47,7 @@ public class FavoriteFragment extends Fragment {
 
         for (int i = 0; i < nameList.length; i++) {
             if (preferences.getBoolean("favorite_" + nameList[i], false)) {
-                favoriteFoodList.add(new FoodList(nameList[i], "Time", ingredientList[i], descList[i], imageList[i]));
+                favoriteFoodList.add(new FoodList(nameList[i], timeList[i], ingredientList[i], descList[i], imageList[i]));
             }
         }
 
