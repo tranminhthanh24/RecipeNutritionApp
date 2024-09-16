@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize"
-    tools:context=".MainActivity">
+    tools:context=".Activity.MainActivity">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/pagerMain"

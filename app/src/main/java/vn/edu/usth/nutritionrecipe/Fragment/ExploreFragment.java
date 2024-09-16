@@ -1,12 +1,10 @@
-package vn.edu.usth.nutritionrecipe.ui.explore;
+package vn.edu.usth.nutritionrecipe.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.content.res.TypedArray;
 
@@ -17,6 +15,8 @@ import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 
+import vn.edu.usth.nutritionrecipe.Activity.FoodDetail;
+import vn.edu.usth.nutritionrecipe.Item.FoodList;
 import vn.edu.usth.nutritionrecipe.Adapter.FoodAdapter;
 import vn.edu.usth.nutritionrecipe.R;
 import vn.edu.usth.nutritionrecipe.databinding.FragmentExploreBinding;

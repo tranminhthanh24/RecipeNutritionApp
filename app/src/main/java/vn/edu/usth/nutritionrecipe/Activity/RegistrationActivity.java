@@ -1,4 +1,4 @@
-package vn.edu.usth.nutritionrecipe;
+package vn.edu.usth.nutritionrecipe.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,6 +21,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import vn.edu.usth.nutritionrecipe.R;
 
 public class RegistrationActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package vn.edu.usth.nutritionrecipe.ui.explore;
+package vn.edu.usth.nutritionrecipe.Item;
 public class FoodList {
     public String name;
     public String time;
