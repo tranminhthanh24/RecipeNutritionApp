@@ -27,7 +27,7 @@
             app:shapeAppearanceOverlay="@style/roundedImageView"/>
 
         <TextView
-            android:layout_width="200dp"
+            android:layout_width="175dp"
             android:layout_height="30dp"
             android:id="@+id/listName"
             android:textColor="@color/black"
@@ -37,7 +37,7 @@
             android:layout_toEndOf="@id/listImage"/>
 
         <TextView
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:id="@+id/listTime"
             android:textColor="@color/black"

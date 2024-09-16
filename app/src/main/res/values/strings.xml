@@ -13,7 +13,72 @@
     <string name="already_have_an_account">Already have an account?</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="sign_in_as_guest">Sign-in as guest</string>
+    <string name="Load">Load more...</string>
+    <string-array name="food_names">
+        <item>Maggi</item>
+        <item>Makizushi</item>
+        <item>Penang Asam Laksa</item>
+        <item>Sauerbraten</item>
+        <item>Red Velvet Cake</item>
+        <item>Crêpe</item>
+        <item>Turkey Hamburger</item>
+        <item>Crinkle-cut Fries</item>
+        <item>Arepas</item>
+        <item>Butter Garlic Crab</item>
+        <item>Chicken Parm</item>
+        <item>Chicken Rice</item>
+        <item>Chili Crab</item>
+        <item>Croissant</item>
+        <item>Fajitas</item>
+        <item>Fish and Chips</item>
+        <item>Gỏi Cuốn</item>
+        <item>Hummus</item>
+        <item>Lasagna</item>
+        <item>Masala Dosa</item>
+        <item>Pasta</item>
+        <item>Pastel de nata</item>
+        <item>Pierogi</item>
+        <item>Piri Piri Chicken</item>
+        <item>Pizza</item>
+        <item>Poke</item>
+        <item>Potato Chips</item>
+        <item>Rendang</item>
+        <item>Seafood Paella</item>
+        <item>Som Tam</item>
+    </string-array>
 
+    <string-array name="cooking_times">
+        <item>2 mins</item>
+        <item>45 mins</item>
+        <item>1 hour</item>
+        <item>3-4 hours</item>
+        <item>45 mins</item>
+        <item>10 mins</item>
+        <item>45 mins</item>
+        <item>30 mins</item>
+        <item>30 mins</item>
+        <item>2 hours</item>
+        <item>2 hours</item>
+        <item>1 hour</item>
+        <item>1 hour</item>
+        <item>30 mins</item>
+        <item>10 mins</item>
+        <item>2 hours</item>
+        <item>1 hour</item>
+        <item>40 mins</item>
+        <item>45 mins</item>
+        <item>1 hour</item>
+        <item>30 mins</item>
+        <item>45 mins</item>
+        <item>90 mins</item>
+        <item>1 hour</item>
+        <item>90 mins</item>
+        <item>15 mins</item>
+        <item>40 mins</item>
+        <item>3-4 hours</item>
+        <item>50 mins</item>
+        <item>20 mins</item>
+    </string-array>
 
     <!-- Maggi -->
     <string name="maggiIngredients">
@@ -119,6 +184,7 @@
     \n- 2 tablespoons red food coloring
     \n- 1 teaspoon vanilla extract
     \n- Cream cheese frosting for topping</string>
+
     <string name="redVelvetCakeDesc">
     - Preheat oven to 175°C (350°F) and grease two round cake pans
     \n- In a large bowl, sift together flour, sugar, baking soda, and cocoa powder

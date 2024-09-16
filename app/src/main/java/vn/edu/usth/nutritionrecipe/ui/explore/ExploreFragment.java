@@ -6,7 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
+import android.content.res.TypedArray;
+
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -31,38 +34,15 @@ public class ExploreFragment extends Fragment {
 
         ListView listView = binding.listView;
 
-        int[] imageList = {
-                R.drawable.maggi,
-                R.drawable.makizushi,
-                R.drawable.penang_asam_laksa,
-                R.drawable.sauerbraten,
-                R.drawable.red_velvet_cake,
-                R.drawable.crepe,
-                R.drawable.turkey_burger,
-                R.drawable.crinklecut_fries,
-                R.drawable.arepas,
-                R.drawable.butter_garlic_crab,
-                R.drawable.chicken_parm,
-                R.drawable.chicken_rice,
-                R.drawable.chili_crab,
-                R.drawable.croissant,
-                R.drawable.fajitas,
-                R.drawable.fish_n_chips,
-                R.drawable.goi_cuon,
-                R.drawable.hummus,
-                R.drawable.lasagna,
-                R.drawable.masala_dosa,
-                R.drawable.pasta,
-                R.drawable.pastel_de_nata,
-                R.drawable.pierogi,
-                R.drawable.piri_piri_chicken,
-                R.drawable.pizza,
-                R.drawable.poke,
-                R.drawable.potato_chips,
-                R.drawable.rendang,
-                R.drawable.seafood_paella,
-                R.drawable.som_tam
-        };
+        TypedArray images = getResources().obtainTypedArray(R.array.image_list);
+        int[] imageList = new int[images.length()];
+
+        for (int i = 0; i < images.length(); i++) {
+            imageList[i] = images.getResourceId(i, -1); // Retrieve drawable resource ID
+        }
+
+        images.recycle();  // Make sure to call recycle() to free up memory
+
 
         int[] ingredientList = {
                 R.string.maggiIngredients,
@@ -130,71 +110,10 @@ public class ExploreFragment extends Fragment {
                 R.string.somTamDesc
         };
 
-        String[] nameList = {
-                "Maggi",
-                "Makizushi",
-                "Penang Asam Laksa",
-                "Sauerbraten",
-                "Red Velvet Cake",
-                "Crêpe",
-                "Turkey Hamburger",
-                "Crinkle-cut Fries",
-                "Arepas",
-                "Butter Garlic Crab",
-                "Chicken Parm",
-                "Chicken Rice",
-                "Chili Crab",
-                "Croissant",
-                "Fajitas",
-                "Fish and Chips",
-                "Gỏi Cuốn",
-                "Hummus",
-                "Lasagna",
-                "Masala Dosa",
-                "Pasta",
-                "Pastel de nata",
-                "Pierogi",
-                "Piri Piri Chicken",
-                "Pizza",
-                "Poke",
-                "Potato Chips",
-                "Rendang",
-                "Seafood Paella",
-                "Som Tam"
-        };
+        String[] nameList = getResources().getStringArray(R.array.food_names);
 
-        String[] timeList = {
-                "2 mins",
-                "45 mins",
-                "1 hour",
-                "3-4 hours",
-                "45 mins",
-                "10 mins",
-                "45 mins",
-                "30 mins",
-                "30 mins",
-                "2 hours",
-                "2 hours",
-                "1 hour",
-                "1 hour",
-                "30 mins",
-                "10 mins",
-                "2 hours",
-                "1 hour",
-                "40 mins",
-                "45 mins",
-                "1 hour",
-                "30 mins",
-                "45 mins",
-                "90 mins",
-                "1 hour",
-                "90 mins",
-                "15 mins",
-                "40 mins",
-                "3-4 hours",
-                "50 mins",
-                "20 mins"
-        };
+
+        String[] timeList = getResources().getStringArray(R.array.cooking_times);
 
         for (int i = 0; i < imageList.length; i++) {
             FoodList foodList = new FoodList(nameList[i], timeList[i], ingredientList[i], descList[i], imageList[i]);

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="image_list">
+        <item>@drawable/maggi</item>
+        <item>@drawable/makizushi</item>
+        <item>@drawable/penang_asam_laksa</item>
+        <item>@drawable/sauerbraten</item>
+        <item>@drawable/red_velvet_cake</item>
+        <item>@drawable/crepe</item>
+        <item>@drawable/turkey_burger</item>
+        <item>@drawable/crinklecut_fries</item>
+        <item>@drawable/arepas</item>
+        <item>@drawable/butter_garlic_crab</item>
+        <item>@drawable/chicken_parm</item>
+        <item>@drawable/chicken_rice</item>
+        <item>@drawable/chili_crab</item>
+        <item>@drawable/croissant</item>
+        <item>@drawable/fajitas</item>
+        <item>@drawable/fish_n_chips</item>
+        <item>@drawable/goi_cuon</item>
+        <item>@drawable/hummus</item>
+        <item>@drawable/lasagna</item>
+        <item>@drawable/masala_dosa</item>
+        <item>@drawable/pasta</item>
+        <item>@drawable/pastel_de_nata</item>
+        <item>@drawable/pierogi</item>
+        <item>@drawable/piri_piri_chicken</item>
+        <item>@drawable/pizza</item>
+        <item>@drawable/poke</item>
+        <item>@drawable/potato_chips</item>
+        <item>@drawable/rendang</item>
+        <item>@drawable/seafood_paella</item>
+        <item>@drawable/som_tam</item>
+    </array>
+</resources>
