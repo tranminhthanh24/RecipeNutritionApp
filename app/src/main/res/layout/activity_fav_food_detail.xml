@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.FoodDetail">
+    tools:context=".Activity.FavFoodDetail">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,15 +13,12 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <ToggleButton
-            android:id="@+id/favButton"
+        <Button
+            android:id="@+id/favFoodButton"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="top|end"
-            android:textOn=""
-            android:textOff=""
-            android:background="@drawable/toggle_favbutton"
-            android:onClick="onDefaultToggleClick"/>
+            android:background="@drawable/baseline_favorite_24"/>
 
         <TextView
             android:layout_width="wrap_content"
