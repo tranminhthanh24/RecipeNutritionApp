@@ -19,7 +19,9 @@ public class FoodDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityFoodDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         Intent intent = this.getIntent();
         if (intent != null){
             String name = intent.getStringExtra("name");
@@ -38,7 +40,7 @@ public class FoodDetail extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
+
             return true;
         }
         return super.onOptionsItemSelected(item);
