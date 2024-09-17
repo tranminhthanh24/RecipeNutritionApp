@@ -27,21 +27,22 @@ public class FavoriteFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentFavoriteBinding.inflate(inflater, container, false);
+        binding = FragmentFavoriteBinding.inflate(inflater, container, false); //Inflate the layout
         View root = binding.getRoot();
 
-        ListView listView = binding.listView;
+        ListView listView = binding.listView; //Get the listView
 
+        //Retrieve image from resource
         TypedArray images = getResources().obtainTypedArray(R.array.image_list);
+        //Create an array to hold image resource IDs
         int[] imageList = new int[images.length()];
-
+        // Retrieve drawable resource ID
         for (int i = 0; i < images.length(); i++) {
-            imageList[i] = images.getResourceId(i, -1); // Retrieve drawable resource ID
+            imageList[i] = images.getResourceId(i, -1);
         }
+        images.recycle();  //Free up memory
 
-        images.recycle();  // Make sure to call recycle() to free up memory
-
-
+        //Retrieve ingredient resource ID
         int[] ingredientList = {
                 R.string.maggiIngredients,
                 R.string.makizushiIngredients,
@@ -75,6 +76,7 @@ public class FavoriteFragment extends Fragment {
                 R.string.somTamIngredients
         };
 
+        //Retrieve description resource ID
         int[] descList = {
                 R.string.maggiDesc,
                 R.string.makizushiDesc,
@@ -108,28 +110,30 @@ public class FavoriteFragment extends Fragment {
                 R.string.somTamDesc
         };
 
+        //Retrieve food name resource ID
         String[] nameList = getResources().getStringArray(R.array.food_names);
 
-
+        //Retrieve cooking time resource ID
         String[] timeList = getResources().getStringArray(R.array.cooking_times);
 
         for (int i = 0; i < imageList.length; i++) {
             FoodList foodList = new FoodList(nameList[i], timeList[i], ingredientList[i], descList[i], imageList[i]);
-            dataArrayList.add(foodList);
+            dataArrayList.add(foodList); //Add each food item to the array list
         }
 
         FoodAdapter foodAdapter = new FoodAdapter(getActivity(), dataArrayList);
         listView.setAdapter(foodAdapter);
 
-        // Move the onItemClick code here
+        //Set click on an item
         listView.setOnItemClickListener((adapterView, view, i, l) -> {
-            Intent intent = new Intent(getActivity(), FavFoodDetail.class);
+            Intent intent = new Intent(getActivity(), FavFoodDetail.class); // Create an Intent to start the FoodDetail activity
+            //Pass data to the FoodDetail activity
             intent.putExtra("name", nameList[i]);
             intent.putExtra("time", timeList[i]);
             intent.putExtra("ingredients", ingredientList[i]);
             intent.putExtra("desc", descList[i]);
             intent.putExtra("image", imageList[i]);
-            startActivity(intent);
+            startActivity(intent); //Start the FoodDetail activity
         });
 
         return root;

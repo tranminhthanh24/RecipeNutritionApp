@@ -6,6 +6,7 @@ public class FoodList {
     public int image;
 
     public FoodList(String name, String time, int ingredients, int description, int image) {
+        //Initialize for corresponding fields
         this.name = name;
         this.time = time;
         this.ingredients = ingredients;
@@ -13,6 +14,7 @@ public class FoodList {
         this.image = image;
     }
 
+    //Getter for corresponding fields
     public String getName() {
         return name;
     }
