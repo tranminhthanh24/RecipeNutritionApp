@@ -13,21 +13,21 @@ import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 
-import vn.edu.usth.nutritionrecipe.Activity.FoodDetail;
+import vn.edu.usth.nutritionrecipe.Activity.FavFoodDetail;
 import vn.edu.usth.nutritionrecipe.Item.FoodList;
 import vn.edu.usth.nutritionrecipe.Adapter.FoodAdapter;
 import vn.edu.usth.nutritionrecipe.R;
-import vn.edu.usth.nutritionrecipe.databinding.FragmentExploreBinding;
+import vn.edu.usth.nutritionrecipe.databinding.FragmentFavoriteBinding;
 
 public class FavoriteFragment extends Fragment {
 
-    private FragmentExploreBinding binding;
+    private FragmentFavoriteBinding binding;
     private final ArrayList<FoodList> dataArrayList = new ArrayList<>();
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentExploreBinding.inflate(inflater, container, false);
+        binding = FragmentFavoriteBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         ListView listView = binding.listView;
@@ -123,7 +123,7 @@ public class FavoriteFragment extends Fragment {
 
         // Move the onItemClick code here
         listView.setOnItemClickListener((adapterView, view, i, l) -> {
-            Intent intent = new Intent(getActivity(), FoodDetail.class);
+            Intent intent = new Intent(getActivity(), FavFoodDetail.class);
             intent.putExtra("name", nameList[i]);
             intent.putExtra("time", timeList[i]);
             intent.putExtra("ingredients", ingredientList[i]);

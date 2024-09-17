@@ -123,7 +123,7 @@ public class ExploreFragment extends Fragment {
         FoodAdapter foodAdapter = new FoodAdapter(getActivity(), dataArrayList);
         listView.setAdapter(foodAdapter);
 
-        // Move the onItemClick code here
+
         listView.setOnItemClickListener((adapterView, view, i, l) -> {
             Intent intent = new Intent(getActivity(), FoodDetail.class);
             intent.putExtra("name", nameList[i]);
