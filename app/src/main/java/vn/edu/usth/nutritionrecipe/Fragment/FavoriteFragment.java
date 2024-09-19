@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 import vn.edu.usth.nutritionrecipe.Activity.FavFoodDetail;
 import vn.edu.usth.nutritionrecipe.Item.FoodList;
-import vn.edu.usth.nutritionrecipe.Adapter.FoodAdapter;
+import vn.edu.usth.nutritionrecipe.Adapter.FavAdapter;
 import vn.edu.usth.nutritionrecipe.R;
 import vn.edu.usth.nutritionrecipe.databinding.FragmentFavoriteBinding;
 
@@ -121,8 +121,8 @@ public class FavoriteFragment extends Fragment {
             dataArrayList.add(foodList); //Add each food item to the array list
         }
 
-        FoodAdapter foodAdapter = new FoodAdapter(getActivity(), dataArrayList);
-        listView.setAdapter(foodAdapter);
+        FavAdapter favAdapter = new FavAdapter(getActivity(), dataArrayList);
+        listView.setAdapter(favAdapter);
 
         //Set click on an item
         listView.setOnItemClickListener((adapterView, view, i, l) -> {

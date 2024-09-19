@@ -7,4 +7,5 @@
     <dimen name="margin_medium">10dp</dimen>
     <dimen name="margin_large">150dp</dimen>
     <dimen name="image_size">150dp</dimen>
+    <dimen name="wide_image">350dp</dimen>
 </resources>
