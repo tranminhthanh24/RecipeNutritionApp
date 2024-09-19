@@ -114,12 +114,13 @@ public class ExploreFragment extends Fragment {
 
         //Retrieve food name from resources
         String[] nameList = getResources().getStringArray(R.array.food_names);
+        String[] proteinList = getResources().getStringArray(R.array.food_protein);
 
         //Retrieve cooking time from resources
         String[] timeList = getResources().getStringArray(R.array.cooking_times);
 
         for (int i = 0; i < imageList.length; i++) {
-            FoodList foodList = new FoodList(nameList[i], timeList[i], ingredientList[i], descList[i], imageList[i]);
+            FoodList foodList = new FoodList(nameList[i], timeList[i], ingredientList[i], descList[i], imageList[i], proteinList[i]);
             dataArrayList.add(foodList); //Add each food item to the array list
         }
 
@@ -135,6 +136,7 @@ public class ExploreFragment extends Fragment {
             intent.putExtra("ingredients", ingredientList[i]);
             intent.putExtra("desc", descList[i]);
             intent.putExtra("image", imageList[i]);
+            intent.putExtra("protein", proteinList[i]);
             startActivity(intent); //Start the FoodDetail activity
         });
 

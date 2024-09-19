@@ -27,11 +27,12 @@ public class FavFoodDetail extends AppCompatActivity {
 
         //Create an Intent to start the FavFoodDetail activity
         Intent intent = this.getIntent();
-        if (intent != null) {
+        if (intent != null){
             //Retrieve food name, cooking time from the intent; Retrieve ingredients, description & image from resource ID
             String name = intent.getStringExtra("name");
             String time = intent.getStringExtra("time");
-            int ingredients = intent.getIntExtra("ingredients", R.string.maggiIngredients);
+            String protein = intent.getStringExtra("protein");
+            int ingredients = intent.getIntExtra("ingredients",  R.string.maggiIngredients);
             int desc = intent.getIntExtra("desc", R.string.maggiDesc);
             int image = intent.getIntExtra("image", R.drawable.maggi);
             //Set the retrieved data to corresponding views
@@ -40,6 +41,7 @@ public class FavFoodDetail extends AppCompatActivity {
             binding.detailDesc.setText(desc);
             binding.detailIngredients.setText(ingredients);
             binding.detailImage.setImageResource(image);
+            binding.detailProtein.setText(protein);
         }
     }
 

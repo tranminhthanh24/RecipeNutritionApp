@@ -47,6 +47,40 @@
         <item>Som Tam</item>
     </string-array>
 
+    <string-array name="food_protein">
+        <item>8g</item>
+        <item>4g</item>
+        <item>6g</item>
+        <item>25g</item>
+        <item>5g</item>
+        <item>7g</item>
+        <item>30g</item>
+        <item>3g</item>
+        <item>7g</item>
+        <item>19g</item>
+        <item>32g</item>
+        <item>25g</item>
+        <item>20g</item>
+        <item>8g</item>
+        <item>20g</item>
+        <item>21g</item>
+        <item>5g</item>
+        <item>8g</item>
+        <item>28g</item>
+        <item>6g</item>
+        <item>7g</item>
+        <item>3g</item>
+        <item>10g</item>
+        <item>35g</item>
+        <item>12g</item>
+        <item>25g</item>
+        <item>3g</item>
+        <item>24g</item>
+        <item>20g</item>
+        <item>3g</item>
+    </string-array>
+
+
     <string-array name="cooking_times">
         <item>2 mins</item>
         <item>45 mins</item>
