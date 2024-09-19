@@ -13,7 +13,21 @@
     <string name="already_have_an_account">Already have an account?</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="sign_in_as_guest">Sign-in as guest</string>
-    <string name="Load">Load more...</string>
+    <string name="Load">Load more…</string>
+    <string name="scroll_food_one_description">Scroll view displaying food images section one.</string>
+    <string name="scroll_food_two_description">Scroll view displaying food images section two.</string>
+    <string name="suggestion">Today\'s suggestion:</string>
+    <string name="recent">Recent:</string>
+    <string name="pastel_de_nata_description">Pastel de Nata</string>
+    <string name="arepas_description">Arepas</string>
+    <string name="sauerbraten_description">Sauerbraten</string>
+    <string name="maggi_description">Maggi</string>
+    <string name="chicken_parm_description">Chicken Parmesan</string>
+    <string name="chili_crab_description">Chili Crab</string>
+    <string name="hummus_description">Hummus</string>
+    <string name="turkey_burger_description">Turkey Burger</string>
+    <string name="scroll_items_description">Scroll through the food items</string>
+
     <string-array name="food_names">
         <item>Maggi</item>
         <item>Makizushi</item>
