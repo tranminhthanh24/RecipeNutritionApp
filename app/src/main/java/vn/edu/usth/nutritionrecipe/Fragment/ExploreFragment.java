@@ -114,6 +114,7 @@ public class ExploreFragment extends Fragment {
 
         //Retrieve food name from resources
         String[] nameList = getResources().getStringArray(R.array.food_names);
+        //Retrieve total protein of the item from resources
         String[] proteinList = getResources().getStringArray(R.array.food_protein);
 
         //Retrieve cooking time from resources

@@ -112,6 +112,7 @@ public class FavoriteFragment extends Fragment {
 
         //Retrieve food name resource ID
         String[] nameList = getResources().getStringArray(R.array.food_names);
+        //Retrieve total protein of the item resource ID
         String[] proteinList = getResources().getStringArray(R.array.food_protein);
         //Retrieve cooking time resource ID
         String[] timeList = getResources().getStringArray(R.array.cooking_times);

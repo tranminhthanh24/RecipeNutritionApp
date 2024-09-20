@@ -7,7 +7,6 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 
 import vn.edu.usth.nutritionrecipe.databinding.ActivityFavFoodDetailBinding;
 import vn.edu.usth.nutritionrecipe.R;
@@ -15,15 +14,13 @@ import vn.edu.usth.nutritionrecipe.R;
 public class FavFoodDetail extends AppCompatActivity {
 
     ActivityFavFoodDetailBinding binding;
-    private Button favFoodButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityFavFoodDetailBinding.inflate(getLayoutInflater()); //Inflate the layout
-        setContentView(R.layout.activity_fav_food_detail);
+        setContentView(binding.getRoot());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Enable the back button in the action bar
-        favFoodButton = findViewById(R.id.favFoodButton); //Get the favFoodButton from the resource ID
 
         //Create an Intent to start the FavFoodDetail activity
         Intent intent = this.getIntent();
