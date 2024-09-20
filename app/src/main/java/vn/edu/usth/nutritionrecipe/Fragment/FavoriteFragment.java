@@ -112,12 +112,13 @@ public class FavoriteFragment extends Fragment {
 
         //Retrieve food name resource ID
         String[] nameList = getResources().getStringArray(R.array.food_names);
-
+        //Retrieve total protein of the item resource ID
+        String[] proteinList = getResources().getStringArray(R.array.food_protein);
         //Retrieve cooking time resource ID
         String[] timeList = getResources().getStringArray(R.array.cooking_times);
 
         for (int i = 0; i < imageList.length; i++) {
-            FoodList foodList = new FoodList(nameList[i], timeList[i], ingredientList[i], descList[i], imageList[i]);
+            FoodList foodList = new FoodList(nameList[i], timeList[i], ingredientList[i], descList[i], imageList[i], proteinList[i]);
             dataArrayList.add(foodList); //Add each food item to the array list
         }
 
@@ -126,13 +127,14 @@ public class FavoriteFragment extends Fragment {
 
         //Set click on an item
         listView.setOnItemClickListener((adapterView, view, i, l) -> {
-            Intent intent = new Intent(getActivity(), FavFoodDetail.class); // Create an Intent to start the FoodDetail activity
-            //Pass data to the FoodDetail activity
+            Intent intent = new Intent(getActivity(), FavFoodDetail.class); // Create an Intent to start the FavFoodDetail activity
+            //Pass data to the FavFoodDetail activity
             intent.putExtra("name", nameList[i]);
             intent.putExtra("time", timeList[i]);
             intent.putExtra("ingredients", ingredientList[i]);
             intent.putExtra("desc", descList[i]);
             intent.putExtra("image", imageList[i]);
+            intent.putExtra("protein", proteinList[i]);
             startActivity(intent); //Start the FoodDetail activity
         });
 
