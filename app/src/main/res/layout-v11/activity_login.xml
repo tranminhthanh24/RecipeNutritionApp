@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:foreground="@drawable/foreground"
         android:scaleType="centerCrop"
-        android:src="@drawable/bg3"
+        android:src="@drawable/crepe"
         tools:ignore="ContentDescription"/>
 
     <TextView

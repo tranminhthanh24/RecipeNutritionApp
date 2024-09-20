@@ -11,4 +11,5 @@
     <color name="MainDarkText">#FFFFFF</color>
     <color name="MainDarkBackground">#000000</color>
     <color name="red">#25500000</color>
+    <color name="yellow">#D1D63B</color>
 </resources>
