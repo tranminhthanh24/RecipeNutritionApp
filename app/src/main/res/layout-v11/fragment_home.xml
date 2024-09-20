@@ -16,6 +16,7 @@
         android:id="@+id/text_suggest"
         android:text="@string/suggestion"
         android:textSize="@dimen/text_size_large"
+        android:background="@drawable/rounded_background"
         android:textColor="@color/black"
         android:gravity="start"
         android:layout_marginBottom="@dimen/margin_medium"
@@ -25,8 +26,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:background="@drawable/rounded_border"
         android:paddingStart="@dimen/activity_horizontal_margin"
         android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:elevation="8dp"
         android:id="@+id/scroll_food_one"
         android:contentDescription="@string/scroll_food_one_description">
 
@@ -110,6 +113,7 @@
         android:id="@+id/text_recent"
         android:text="@string/recent"
         android:textSize="@dimen/text_size_large"
+        android:background="@drawable/rounded_background"
         android:textColor="@color/black"
         android:gravity="start"
         android:layout_marginBottom="@dimen/margin_medium"
@@ -119,8 +123,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:background="@drawable/rounded_border"
         android:paddingStart="@dimen/activity_horizontal_margin"
         android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:elevation="8dp"
         android:id="@+id/scroll_food_two"
         android:contentDescription="@string/scroll_food_two_description">
 
