@@ -8,10 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.content.res.TypedArray;
 
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
 
 import java.util.ArrayList;
 
