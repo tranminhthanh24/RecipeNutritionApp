@@ -115,6 +115,9 @@ public class ExploreFragment extends Fragment {
         //Retrieve total protein of the item from resources
         String[] proteinList = getResources().getStringArray(R.array.food_protein);
 
+        //Retrieve total calories of the item from resources
+        String[] caloriesList = getResources().getStringArray(R.array.food_calories);
+
         //Retrieve cooking time from resources
         String[] timeList = getResources().getStringArray(R.array.cooking_times);
 
@@ -136,6 +139,7 @@ public class ExploreFragment extends Fragment {
             intent.putExtra("desc", descList[i]);
             intent.putExtra("image", imageList[i]);
             intent.putExtra("protein", proteinList[i]);
+            intent.putExtra("calories", caloriesList[i]);
             startActivity(intent); //Start the FoodDetail activity
         });
 

@@ -40,6 +40,7 @@ public class FoodDetail extends AppCompatActivity {
             binding.detailIngredients.setText(ingredients);
             binding.detailImage.setImageResource(image);
             binding.detailProtein.setText(protein);
+            binding.detailCalories.setText(calories);
         }
     }
 

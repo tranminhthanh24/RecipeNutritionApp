@@ -105,6 +105,23 @@
             android:layout_marginStart="10dp"
             android:textSize="16sp"
             android:id="@+id/detailProtein"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Calories:"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="calories"
+            android:layout_marginStart="10dp"
+            android:textSize="16sp"
+            android:id="@+id/detailCalories"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
