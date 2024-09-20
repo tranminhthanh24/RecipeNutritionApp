@@ -3,6 +3,6 @@
     <item android:drawable="@drawable/bg3" />
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#80000000" /> </shape>
+            <solid android:color="#99000000" /> </shape>
     </item>
 </layer-list>
