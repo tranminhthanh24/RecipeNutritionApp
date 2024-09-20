@@ -28,6 +28,7 @@ public class FavFoodDetail extends AppCompatActivity {
             String name = intent.getStringExtra("name");
             String time = intent.getStringExtra("time");
             String protein = intent.getStringExtra("protein");
+            String calories = intent.getStringExtra("calories");
             int ingredients = intent.getIntExtra("ingredients",  R.string.maggiIngredients);
             int desc = intent.getIntExtra("desc", R.string.maggiDesc);
             int image = intent.getIntExtra("image", R.drawable.maggi);
@@ -38,6 +39,7 @@ public class FavFoodDetail extends AppCompatActivity {
             binding.detailIngredients.setText(ingredients);
             binding.detailImage.setImageResource(image);
             binding.detailProtein.setText(protein);
+            binding.detailCalories.setText(calories);
         }
     }
 

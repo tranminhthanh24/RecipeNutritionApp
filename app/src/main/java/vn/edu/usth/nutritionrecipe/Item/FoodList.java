@@ -5,8 +5,9 @@ public class FoodList {
     int ingredients, description;
     public int image;
     public String protein;
+    public String calories;
 
-    public FoodList(String name, String time, int ingredients, int description, int image, String protein) {
+    public FoodList(String name, String time, int ingredients, int description, int image, String protein, String calories) {
         //Initialize for corresponding fields
         this.name = name;
         this.time = time;
@@ -14,6 +15,7 @@ public class FoodList {
         this.description = description;
         this.image = image;
         this.protein = protein;
+        this.calories = calories;
     }
 
     //Getter for corresponding fields

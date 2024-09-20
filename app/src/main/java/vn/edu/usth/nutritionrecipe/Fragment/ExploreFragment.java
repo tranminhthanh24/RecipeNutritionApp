@@ -122,7 +122,7 @@ public class ExploreFragment extends Fragment {
         String[] timeList = getResources().getStringArray(R.array.cooking_times);
 
         for (int i = 0; i < imageList.length; i++) {
-            FoodList foodList = new FoodList(nameList[i], timeList[i], ingredientList[i], descList[i], imageList[i], proteinList[i]);
+            FoodList foodList = new FoodList(nameList[i], timeList[i], ingredientList[i], descList[i], imageList[i], proteinList[i], caloriesList[i]);
             dataArrayList.add(foodList); //Add each food item to the array list
         }
 

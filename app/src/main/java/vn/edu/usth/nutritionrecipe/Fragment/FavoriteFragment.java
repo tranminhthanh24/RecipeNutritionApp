@@ -114,11 +114,13 @@ public class FavoriteFragment extends Fragment {
         String[] nameList = getResources().getStringArray(R.array.food_names);
         //Retrieve total protein of the item resource ID
         String[] proteinList = getResources().getStringArray(R.array.food_protein);
+        //Retrieve total calories of the itme rsource ID
+        String[] caloriesList = getResources().getStringArray(R.array.food_calories);
         //Retrieve cooking time resource ID
         String[] timeList = getResources().getStringArray(R.array.cooking_times);
 
         for (int i = 0; i < imageList.length; i++) {
-            FoodList foodList = new FoodList(nameList[i], timeList[i], ingredientList[i], descList[i], imageList[i], proteinList[i]);
+            FoodList foodList = new FoodList(nameList[i], timeList[i], ingredientList[i], descList[i], imageList[i], proteinList[i],caloriesList[i]);
             dataArrayList.add(foodList); //Add each food item to the array list
         }
 
@@ -135,6 +137,7 @@ public class FavoriteFragment extends Fragment {
             intent.putExtra("desc", descList[i]);
             intent.putExtra("image", imageList[i]);
             intent.putExtra("protein", proteinList[i]);
+            intent.putExtra("calories", caloriesList[i]);
             startActivity(intent); //Start the FoodDetail activity
         });
 
