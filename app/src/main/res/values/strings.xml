@@ -127,7 +127,40 @@
         <item>50 mins</item>
         <item>20 mins</item>
     </string-array>
+    <string-array name="calories">
+        <item>Arepas: ~150–250 calories per arepa (depends on filling)</item>
+        <item >Butter Garlic Crab: ~300–400 calories per serving (without rice).</item>
+        <item >Chicken Parm: ~600–800 calories per serving.</item>
+        <item >Chicken Rice: ~500–700 calories per serving (depends on portion size).</item>
+        <item >Chili Crab: ~400–600 calories per serving.</item>
+        <item >Crêpe: ~150–250 calories per crêpe (without filling).</item>
+        <item >Crinkle–cut Fries: ~300–400 calories per serving (100g).</item>
+        <item >Croissant: ~200–300 calories per croissant.</item>
+        <item >Fajitas: ~350–500 calories per serving (depends on filling).</item>
+        <item >Fish and Chips: ~700–1000 calories per serving.</item>
+        <item >Gỏi Cuốn (Vietnamese Spring Rolls): ~150–200 calories per roll.</item>
+        <item >Hummus: ~100–150 calories per 2 tbsp.</item>
+        <item >Lasagna: ~600–800 calories per serving.</item>
+        <item >Maggi: ~300–350 calories per serving (1 pack).</item>
+        <item >Makizushi (Sushi Rolls): ~250–350 calories per roll.</item>
+        <item >Masala Dosa: ~250–400 calories per dosa.</item>
+        <item >Pasta: ~300–400 calories per serving (without sauce).</item>
+        <item >Penang Asam Laksa: ~400–500 calories per bowl.</item>
+        <item >Pastel de nata: ~200–250 calories per tart.</item>
+        <item >Pierogi: ~200–300 calories per serving (3–4 pieces).</item>
+        <item >Piri Piri Chicken: ~300–500 calories per serving (without sides).</item>
+        <item >Pizza: ~250–350 calories per slice (varies by topping).</item>
+        <item >Poke: ~300–500 calories per bowl (depends on ingredients).</item>
+        <item >Potato Chips: ~150–200 calories per serving (28g or a small handful).</item>
+        <item >Rendang: ~400–600 calories per serving.</item>
+        <item >Red Velvet Cake: ~400–500 calories per slice.</item>
+        <item >Sauerbraten: ~400–600 calories per serving.</item>
+        <item >Seafood Paella: ~400–600 calories per serving.</item>
+        <item >Som Tam: ~200–300 calories per serving.</item>
+        <item >Turkey Hamburger: ~400–600 calories per burger.</item>
 
+
+    </string-array>
     <!-- Maggi -->
     <string name="maggiIngredients">
     - 1 pack Maggi noodles

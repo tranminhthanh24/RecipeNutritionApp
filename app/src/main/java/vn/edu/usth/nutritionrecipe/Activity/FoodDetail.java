@@ -29,6 +29,7 @@ public class FoodDetail extends AppCompatActivity {
             String name = intent.getStringExtra("name");
             String time = intent.getStringExtra("time");
             String protein = intent.getStringExtra("protein");
+            String calories = intent.getStringExtra("calories");
             int ingredients = intent.getIntExtra("ingredients",  R.string.maggiIngredients);
             int desc = intent.getIntExtra("desc", R.string.maggiDesc);
             int image = intent.getIntExtra("image", R.drawable.maggi);
