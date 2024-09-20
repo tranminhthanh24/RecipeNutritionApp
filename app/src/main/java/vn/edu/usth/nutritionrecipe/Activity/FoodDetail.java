@@ -25,7 +25,7 @@ public class FoodDetail extends AppCompatActivity {
         //Create an Intent to start the FoodDetail activity
         Intent intent = this.getIntent();
         if (intent != null){
-            //Retrieve food name, cooking time from the intent; Retrieve ingredients, description & image from resource ID
+            //Retrieve food name, cooking time,protein,calories, ingredients, description & image from resource ID
             String name = intent.getStringExtra("name");
             String time = intent.getStringExtra("time");
             String protein = intent.getStringExtra("protein");

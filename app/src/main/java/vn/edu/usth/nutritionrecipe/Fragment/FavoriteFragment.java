@@ -127,8 +127,8 @@ public class FavoriteFragment extends Fragment {
 
         //Set click on an item
         listView.setOnItemClickListener((adapterView, view, i, l) -> {
-            Intent intent = new Intent(getActivity(), FavFoodDetail.class); // Create an Intent to start the FoodDetail activity
-            //Pass data to the FoodDetail activity
+            Intent intent = new Intent(getActivity(), FavFoodDetail.class); // Create an Intent to start the FavFoodDetail activity
+            //Pass data to the FavFoodDetail activity
             intent.putExtra("name", nameList[i]);
             intent.putExtra("time", timeList[i]);
             intent.putExtra("ingredients", ingredientList[i]);
