@@ -7,91 +7,98 @@
     android:layout_height="match_parent"
     android:gravity="start|center"
     android:orientation="vertical"
-    android:layout_marginTop="150dp"
-    tools:context=".Fragment.HomeFragment"
-    >
+    android:layout_marginTop="@dimen/margin_large"
+    tools:context=".Fragment.HomeFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/text_suggest"
-        android:text="Today's suggestion:"
-        android:textSize="30sp"
+        android:text="@string/suggestion"
+        android:textSize="@dimen/text_size_large"
         android:textColor="@color/black"
         android:gravity="start"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="10dp"
-        />
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:layout_marginStart="@dimen/margin_medium" />
 
     <HorizontalScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
         android:id="@+id/scroll_food_one"
-        >
+        android:contentDescription="@string/scroll_food_one_description">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:gravity="center"
-            >
+            android:gravity="center">
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/wide_image"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/pastel_de_nata"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/pastel_de_nata_description" />
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/wide_image"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/arepas"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/arepas_description" />
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/wide_image"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/sauerbraten"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/sauerbraten_description" />
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/wide_image"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/maggi"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/maggi_description" />
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/wide_image"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/chicken_parm"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/chicken_parm_description" />
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/wide_image"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/chili_crab"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/chili_crab_description" />
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/wide_image"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/hummus"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/hummus_description" />
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/wide_image"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/turkey_burger"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/turkey_burger_description" />
 
         </LinearLayout>
 
@@ -101,82 +108,91 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/text_recent"
-        android:text="Recent:"
-        android:textSize="30sp"
+        android:text="@string/recent"
+        android:textSize="@dimen/text_size_large"
         android:textColor="@color/black"
         android:gravity="start"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="10dp"/>
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:layout_marginStart="@dimen/margin_medium" />
 
     <HorizontalScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
         android:id="@+id/scroll_food_two"
-        >
+        android:contentDescription="@string/scroll_food_two_description">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:gravity="center"
-            >
+            android:gravity="center">
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/wide_image"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/pastel_de_nata"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/pastel_de_nata_description" />
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/wide_image"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/arepas"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/arepas_description" />
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/wide_image"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/sauerbraten"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/sauerbraten_description" />
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/wide_image"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/maggi"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/maggi_description" />
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/wide_image"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/chicken_parm"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/chicken_parm_description" />
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/wide_image"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/chili_crab"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/chili_crab_description" />
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/wide_image"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/hummus"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/hummus_description" />
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/wide_image"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:src="@drawable/turkey_burger"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/turkey_burger_description" />
 
         </LinearLayout>
 

@@ -22,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="-10dp"
+        android:paddingHorizontal="16dp"
         android:iconifiedByDefault="false"
         android:queryHint="Search..."
         android:background="@drawable/rounded_background"
