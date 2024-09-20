@@ -43,7 +43,7 @@
                 android:layout_width="@dimen/wide_image"
                 android:layout_height="@dimen/image_size"
                 android:layout_marginEnd="@dimen/margin_small"
-                android:src="@drawable/pastel_de_nata"
+                android:src="@drawable/goi_cuon"
                 android:scaleType="centerCrop"
                 android:contentDescription="@string/pastel_de_nata_description" />
 
