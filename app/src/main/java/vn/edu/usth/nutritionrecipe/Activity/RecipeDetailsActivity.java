@@ -3,6 +3,7 @@ package vn.edu.usth.nutritionrecipe.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -79,7 +80,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
             dialog.dismiss();
             detailName.setText(response.title);
             detailSource.setText(response.sourceName);
-            detailSummary.setText(response.summary);
+            detailSummary.setText(Html.fromHtml(response.summary, Html.FROM_HTML_MODE_LEGACY));
             detailTime.setText(response.readyInMinutes + " Minutes");
             Picasso.get().load(response.image).into(detailImage);
 

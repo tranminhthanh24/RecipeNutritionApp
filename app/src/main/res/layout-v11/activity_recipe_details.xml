@@ -84,8 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:maxLines="5"
+            android:layout_marginTop="15dp"
             android:text="Summary"
             android:textColor="@color/black"
             android:textSize="18sp" />
@@ -104,12 +103,13 @@
             android:layout_margin="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-        
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_detailInstructions"
+            android:background="@color/purple_500"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"/>
+            android:layout_margin="8dp" />
 
         <TextView
             android:layout_width="wrap_content"
