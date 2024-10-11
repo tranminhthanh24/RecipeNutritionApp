@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 
-import vn.edu.usth.nutritionrecipe.Activity.FoodDetail;
+import vn.edu.usth.nutritionrecipe.Activity.RecipeDetailsActivity;
 import vn.edu.usth.nutritionrecipe.Item.FoodList;
 import vn.edu.usth.nutritionrecipe.Adapter.FoodAdapter;
 import vn.edu.usth.nutritionrecipe.R;
@@ -131,8 +131,8 @@ public class ExploreFragment extends Fragment {
 
         //Set click on an item
         listView.setOnItemClickListener((adapterView, view, i, l) -> {
-            Intent intent = new Intent(getActivity(), FoodDetail.class); // Create an Intent to start the FoodDetail activity
-            //Pass data to the FoodDetail activity
+            Intent intent = new Intent(getActivity(), RecipeDetailsActivity.class); // Create an Intent to start the RecipeDetailsActivity activity
+            //Pass data to the RecipeDetailsActivity activity
             intent.putExtra("name", nameList[i]);
             intent.putExtra("time", timeList[i]);
             intent.putExtra("ingredients", ingredientList[i]);
@@ -140,7 +140,7 @@ public class ExploreFragment extends Fragment {
             intent.putExtra("image", imageList[i]);
             intent.putExtra("protein", proteinList[i]);
             intent.putExtra("calories", caloriesList[i]);
-            startActivity(intent); //Start the FoodDetail activity
+            startActivity(intent); //Start the RecipeDetailsActivity activity
         });
 
         return root;

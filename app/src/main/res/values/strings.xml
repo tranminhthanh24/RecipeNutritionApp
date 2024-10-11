@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">USTH Recipe App</string>
+    <string name="api_key">22c9b20cfd75401f81a2557828d5c427</string>
     <string name="title_home">Home</string>
     <string name="title_explore">Explore</string>
     <string name="title_favorite">Favorite</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="background_image">background image</string>
     <string name="register">Register</string>
     <string name="sign_in">Sign-in</string>
@@ -27,6 +27,23 @@
     <string name="hummus_description">Hummus</string>
     <string name="turkey_burger_description">Turkey Burger</string>
     <string name="scroll_items_description">Scroll through the food items</string>
+
+    <string-array name="tags">
+        <item>main course</item>
+        <item>side dish</item>
+        <item>dessert</item>
+        <item>appetizer</item>
+        <item>salad</item>
+        <item>bread</item>
+        <item>breakfast</item>
+        <item>soup</item>
+        <item>beverage</item>
+        <item>sauce</item>
+        <item>marinade</item>
+        <item>fingerfood</item>
+        <item>snack</item>
+        <item>drink</item>
+    </string-array>
 
     <string-array name="food_names">
         <item>Maggi</item>
@@ -852,6 +869,8 @@
 
 
     <string name="load_more">Load More</string>
-    <string name="title_activity_food_detail">Food Detail</string>
+    <string name="title_activity_recipe_details">Recipe Details</string>
+    <string name="dish_name">Dish Name</string>
+    <string name="recipe_name">Recipe Name</string>
 
 </resources>

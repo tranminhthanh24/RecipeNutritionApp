@@ -33,9 +33,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity.FoodDetail"
+            android:name=".Activity.RecipeDetailsActivity"
             android:exported="false"
-            android:label="@string/title_activity_food_detail"
+            android:label="@string/title_activity_recipe_details"
             android:theme="@style/Theme.NutritionRecipe" />
         <activity android:name=".Activity.MainActivity" android:exported="true" />
 

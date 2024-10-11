@@ -138,7 +138,7 @@ public class FavoriteFragment extends Fragment {
             intent.putExtra("image", imageList[i]);
             intent.putExtra("protein", proteinList[i]);
             intent.putExtra("calories", caloriesList[i]);
-            startActivity(intent); //Start the FoodDetail activity
+            startActivity(intent); //Start the RecipeDetailsActivity activity
         });
 
         return root;
