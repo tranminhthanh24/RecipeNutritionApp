@@ -21,10 +21,13 @@ import java.util.List;
 import java.util.Objects;
 
 import vn.edu.usth.nutritionrecipe.Adapter.IngredientsAdapter;
+import vn.edu.usth.nutritionrecipe.Adapter.InstructionsAdapter;
 import vn.edu.usth.nutritionrecipe.Adapter.SimilarRecipeAdapter;
+import vn.edu.usth.nutritionrecipe.Listeners.InstructionsListener;
 import vn.edu.usth.nutritionrecipe.Listeners.RecipeClickListener;
 import vn.edu.usth.nutritionrecipe.Listeners.RecipeDetailsListener;
 import vn.edu.usth.nutritionrecipe.Listeners.SimilarRecipesListener;
+import vn.edu.usth.nutritionrecipe.Models.InstructionsResponse;
 import vn.edu.usth.nutritionrecipe.Models.RecipeDetailsResponse;
 import vn.edu.usth.nutritionrecipe.Models.SimilarRecipeResponse;
 import vn.edu.usth.nutritionrecipe.R;
@@ -34,11 +37,12 @@ public class RecipeDetailsActivity extends AppCompatActivity {
     int id;
     TextView detailName, detailSource, detailSummary, detailTime;
     ImageView detailImage;
-    RecyclerView recycler_detailIngredients, recycler_detailSimilarRecipe;
+    RecyclerView recycler_detailIngredients, recycler_detailSimilarRecipe, recycler_detailInstructions;
     RequestManager manager;
     ProgressDialog dialog;
     IngredientsAdapter ingredientsAdapter;
     SimilarRecipeAdapter similarRecipeAdapter;
+    InstructionsAdapter instructionsAdapter;
 
 
     @Override
@@ -52,6 +56,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         manager = new RequestManager(this);
         manager.getRecipeDetails(recipeDetailsListener, id);
         manager.getSimilarRecipes(similarRecipesListener, id);
+        manager.getInstructions(instructionsListener, id);
         dialog = new ProgressDialog(this);
         dialog.setTitle("Loading...");
         dialog.show();
@@ -65,6 +70,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         detailImage = findViewById(R.id.detailImage);
         recycler_detailIngredients = findViewById(R.id.recycler_detailIngredients);
         recycler_detailSimilarRecipe = findViewById(R.id.recycler_detailSimilarRecipe);
+        recycler_detailInstructions = findViewById(R.id.recycler_detailInstructions);
     }
 
     private final RecipeDetailsListener recipeDetailsListener = new RecipeDetailsListener() {
@@ -109,6 +115,22 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         public void onRecipeClicked(String id) {
             startActivities(new Intent[]{new Intent(RecipeDetailsActivity.this, RecipeDetailsActivity.class)
                     .putExtra("id", id)});
+        }
+    };
+
+    private final InstructionsListener instructionsListener = new InstructionsListener() {
+        @Override
+        public void didFetch(List<InstructionsResponse> response, String message) {
+            recycler_detailInstructions.setHasFixedSize(true);
+            recycler_detailInstructions.setLayoutManager(new LinearLayoutManager(RecipeDetailsActivity.this, LinearLayoutManager.VERTICAL, false));
+
+            instructionsAdapter = new InstructionsAdapter(RecipeDetailsActivity.this, response);
+            recycler_detailInstructions.setAdapter(instructionsAdapter);
+        }
+
+        @Override
+        public void didError(String message) {
+
         }
     };
 
