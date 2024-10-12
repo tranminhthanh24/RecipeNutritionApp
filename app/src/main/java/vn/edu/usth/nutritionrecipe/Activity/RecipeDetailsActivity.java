@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -37,7 +38,7 @@ import vn.edu.usth.nutritionrecipe.RequestManager;
 public class RecipeDetailsActivity extends AppCompatActivity {
     int id;
     TextView detailName, detailSource, detailSummary, detailTime;
-    ImageView detailImage;
+    ImageView detailImage, detailNutritionLabel;
     RecyclerView recycler_detailIngredients, recycler_detailSimilarRecipe, recycler_detailInstructions;
     RequestManager manager;
     ProgressDialog dialog;
@@ -69,6 +70,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         detailSummary = findViewById(R.id.detailSummary);
         detailTime = findViewById(R.id.detailTime);
         detailImage = findViewById(R.id.detailImage);
+        detailNutritionLabel = findViewById(R.id.detailNutritionLabel);
         recycler_detailIngredients = findViewById(R.id.recycler_detailIngredients);
         recycler_detailSimilarRecipe = findViewById(R.id.recycler_detailSimilarRecipe);
         recycler_detailInstructions = findViewById(R.id.recycler_detailInstructions);
@@ -83,6 +85,10 @@ public class RecipeDetailsActivity extends AppCompatActivity {
             detailSummary.setText(Html.fromHtml(response.summary, Html.FROM_HTML_MODE_LEGACY));
             detailTime.setText(response.readyInMinutes + " Minutes");
             Picasso.get().load(response.image).into(detailImage);
+
+            String apiKey = getString(R.string.api_key);
+            String imageUrl = "https://api.spoonacular.com/recipes/" + response.id + "/nutritionLabel.png?apiKey=" + apiKey;
+            Picasso.get().load(imageUrl).into(detailNutritionLabel);
 
             recycler_detailIngredients.setHasFixedSize(true);
             recycler_detailIngredients.setLayoutManager(new LinearLayoutManager(RecipeDetailsActivity.this, LinearLayoutManager.HORIZONTAL, false));
@@ -134,6 +140,8 @@ public class RecipeDetailsActivity extends AppCompatActivity {
 
         }
     };
+
+
 
     //Return to ExploreFragment
     @Override
