@@ -1,5 +1,7 @@
 package vn.edu.usth.nutritionrecipe.Activity;
 
+import static com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.client.methods.RequestBuilder.put;
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,12 +15,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -45,6 +54,9 @@ public class RecipeDetailsActivity extends AppCompatActivity {
     IngredientsAdapter ingredientsAdapter;
     SimilarRecipeAdapter similarRecipeAdapter;
     InstructionsAdapter instructionsAdapter;
+    Button favoriteButton;
+    private FirebaseFirestore firestore;
+    private FirebaseAuth auth;
 
 
     @Override
@@ -62,6 +74,11 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         dialog = new ProgressDialog(this);
         dialog.setTitle("Loading...");
         dialog.show();
+
+        firestore = FirebaseFirestore.getInstance();
+        auth = FirebaseAuth.getInstance();
+
+        favoriteButton.setOnClickListener(view -> addRecipeToFavorites(String.valueOf(id)));
     }
 
     private void findViews() {
@@ -74,6 +91,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         recycler_detailIngredients = findViewById(R.id.recycler_detailIngredients);
         recycler_detailSimilarRecipe = findViewById(R.id.recycler_detailSimilarRecipe);
         recycler_detailInstructions = findViewById(R.id.recycler_detailInstructions);
+        favoriteButton = findViewById(R.id.favButton);
     }
 
     private final RecipeDetailsListener recipeDetailsListener = new RecipeDetailsListener() {
@@ -140,6 +158,53 @@ public class RecipeDetailsActivity extends AppCompatActivity {
 
         }
     };
+
+    private void addRecipeToFavorites(String recipeId) {
+        String userId = auth.getCurrentUser() != null ? auth.getCurrentUser().getUid() : null;
+
+        if (userId == null) {
+            Toast.makeText(this, "User not authenticated", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        DocumentReference userFavoritesDoc = firestore.collection("favorites").document(userId);
+
+        // Check if the user's document exists
+        userFavoritesDoc.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                if (task.getResult().exists()) {
+                    // Document exists, so update the array with the new recipeId
+                    userFavoritesDoc.update("recipeIds", FieldValue.arrayUnion(recipeId))
+                            .addOnSuccessListener(aVoid -> {
+                                Toast.makeText(this, "Added to favorites", Toast.LENGTH_SHORT).show();
+                                favoriteButton.setText("Favorited");
+                            })
+                            .addOnFailureListener(e -> {
+                                Toast.makeText(this, "Failed to add to favorites", Toast.LENGTH_SHORT).show();
+                                Log.e("FavoriteError", "Error adding to favorites", e);
+                            });
+                } else {
+                    // Document does not exist, so create it with the `recipeIds` array
+                    userFavoritesDoc.set(new HashMap<String, Object>() {{
+                                put("recipeIds", Arrays.asList(recipeId));
+                            }})
+                            .addOnSuccessListener(aVoid -> {
+                                Toast.makeText(this, "Added to favorites", Toast.LENGTH_SHORT).show();
+                                favoriteButton.setText("Favorited");
+                            })
+                            .addOnFailureListener(e -> {
+                                Toast.makeText(this, "Failed to add to favorites", Toast.LENGTH_SHORT).show();
+                                Log.e("FavoriteError", "Error adding to favorites", e);
+                            });
+                }
+            } else {
+                Toast.makeText(this, "Failed to retrieve document", Toast.LENGTH_SHORT).show();
+                Log.e("FavoriteError", "Error fetching document", task.getException());
+            }
+        });
+    }
+
+
 
 
 

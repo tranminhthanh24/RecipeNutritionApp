@@ -30,7 +30,7 @@ public class FavoriteFragment extends Fragment {
     private FirebaseFirestore firestore;
     private String userId;
     private RequestManager requestManager;
-    private List<Integer> favoriteRecipeIds = new ArrayList<>();
+    private List<String> favoriteRecipeIds = new ArrayList<>();
 
     @Nullable
     @Override
@@ -58,16 +58,7 @@ public class FavoriteFragment extends Fragment {
                 .get()
                 .addOnSuccessListener(documentSnapshot -> {
                     if (documentSnapshot.exists() && documentSnapshot.contains("recipeIds")) {
-                        // Type safety: Ensure IDs are castable to Integer
-                        List<?> ids = (List<?>) documentSnapshot.get("recipeIds");
-                        favoriteRecipeIds.clear();
-                        for (Object id : ids) {
-                            if (id instanceof Integer) {
-                                favoriteRecipeIds.add((Integer) id);
-                            } else if (id instanceof Long) {
-                                favoriteRecipeIds.add(((Long) id).intValue());
-                            }
-                        }
+                        favoriteRecipeIds = (List<String>) documentSnapshot.get("recipeIds");
                         fetchFavoriteRecipesDetails();
                     } else {
                         Toast.makeText(getContext(), "No favorite recipes found", Toast.LENGTH_SHORT).show();
@@ -79,11 +70,10 @@ public class FavoriteFragment extends Fragment {
     private void fetchFavoriteRecipesDetails() {
         List<Recipe> favoriteRecipes = new ArrayList<>();
 
-        for (int recipeId : favoriteRecipeIds) {
+        for (String recipeId : favoriteRecipeIds) {
             requestManager.getRecipeDetails(new RecipeDetailsListener() {
                 @Override
                 public void didFetch(RecipeDetailsResponse response, String message) {
-                    // Create a Recipe object based on RecipeDetailsResponse data
                     Recipe recipe = new Recipe();
                     recipe.id = response.id;
                     recipe.title = response.title;
@@ -93,25 +83,20 @@ public class FavoriteFragment extends Fragment {
 
                     favoriteRecipes.add(recipe);
 
-                    // Option 1: Set all recipes at once after all details are fetched
                     if (favoriteRecipes.size() == favoriteRecipeIds.size()) {
                         adapter.setRecipes(favoriteRecipes);
                     }
-
-                    // Option 2: Incrementally add each recipe to the adapter (uncomment if preferred)
-                    // adapter.addRecipe(recipe);
                 }
 
                 @Override
                 public void didError(String message) {
                     Toast.makeText(getContext(), "Error fetching recipe: " + message, Toast.LENGTH_SHORT).show();
                 }
-            }, recipeId);
+            }, Integer.parseInt(recipeId));
         }
     }
 
     private final RecipeClickListener recipeClickListener = id -> {
-        // Handle recipe click (e.g., open detail activity)
         Toast.makeText(getContext(), "Recipe ID: " + id, Toast.LENGTH_SHORT).show();
     };
 }

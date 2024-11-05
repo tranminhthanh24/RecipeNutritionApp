@@ -1,6 +1,7 @@
 package vn.edu.usth.nutritionrecipe.Fragment;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import vn.edu.usth.nutritionrecipe.Activity.RecipeDetailsActivity;
 import vn.edu.usth.nutritionrecipe.Adapter.RandomRecipeAdapter;
 import vn.edu.usth.nutritionrecipe.Listeners.RandomRecipeResponseListener;
 import vn.edu.usth.nutritionrecipe.Listeners.RecipeClickListener;
@@ -111,7 +113,8 @@ public class HomeFragment extends Fragment {
     private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
         @Override
         public void onRecipeClicked(String id) {
-            // Handle recipe click event (e.g., open Detail Activity)
+            startActivity(new Intent(requireActivity(), RecipeDetailsActivity.class)
+                    .putExtra("id", id));
         }
     };
 }
