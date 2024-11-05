@@ -20,6 +20,10 @@ import vn.edu.usth.nutritionrecipe.Models.InstructionsResponse;
 import vn.edu.usth.nutritionrecipe.Models.RandomRecipeApiResponse;
 import vn.edu.usth.nutritionrecipe.Models.RecipeDetailsResponse;
 import vn.edu.usth.nutritionrecipe.Models.SimilarRecipeResponse;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FieldValue;
+
 
 public class RequestManager {
     Context context;
@@ -28,8 +32,14 @@ public class RequestManager {
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
+    FirebaseFirestore firestore;
+    String userId;
+
     public RequestManager(Context context) {
         this.context = context;
+
+        firestore = FirebaseFirestore.getInstance();
+        userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
     }
 
     public  void getRandomRecipes(RandomRecipeResponseListener listener, List<String> tags){
@@ -115,6 +125,44 @@ public class RequestManager {
                 listener.didError(throwable.getMessage());
             }
         });
+    }
+
+    public void addFavoriteRecipe(int recipeId) {
+        firestore.collection("favorites").document(userId)
+                .update("id", FieldValue.arrayUnion(recipeId))
+                .addOnSuccessListener(aVoid -> {
+                    // Successfully added to favorites
+                })
+                .addOnFailureListener(e -> {
+                    // Handle error, e.g., log or display error message
+                });
+    }
+
+    public void removeFavoriteRecipe(int recipeId) {
+        firestore.collection("favorites").document(userId)
+                .update("id", FieldValue.arrayRemove(recipeId))
+                .addOnSuccessListener(aVoid -> {
+                    // Successfully removed from favorites
+                })
+                .addOnFailureListener(e -> {
+                    // Handle error, e.g., log or display error message
+                });
+    }
+
+    public void loadFavoriteRecipes(RecipeDetailsListener listener) {
+        firestore.collection("favorites").document(userId)
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists() && documentSnapshot.contains("id")) {
+                        List<Integer> favoriteIds = (List<Integer>) documentSnapshot.get("id");
+                        for (int id : favoriteIds) {
+                            getRecipeDetails(listener, id); // Use existing method to fetch details
+                        }
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    listener.didError(e.getMessage());
+                });
     }
 
     private interface CallRandomRecipes {

@@ -14,8 +14,8 @@ import androidx.annotation.Nullable;
 import vn.edu.usth.nutritionrecipe.R;
 import vn.edu.usth.nutritionrecipe.Item.FoodList;
 
-public class FavAdapter extends ArrayAdapter<FoodList> {
-    public FavAdapter(@NonNull Context context, ArrayList<FoodList> dataArrayList) {
+public class FavoritesAdapter extends ArrayAdapter<FoodList> {
+    public FavoritesAdapter(@NonNull Context context, ArrayList<FoodList> dataArrayList) {
         super(context, R.layout.fragment_explore_list_items, dataArrayList);
     }
     @NonNull
