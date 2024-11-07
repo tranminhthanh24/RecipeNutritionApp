@@ -27,6 +27,7 @@
     <string name="hummus_description">Hummus</string>
     <string name="turkey_burger_description">Turkey Burger</string>
     <string name="scroll_items_description">Scroll through the food items</string>
+    <string name="refresh">refresh</string>
 
     <string-array name="tags">
         <item>main course</item>
