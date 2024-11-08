@@ -124,7 +124,6 @@ public class FavoriteFragment extends Fragment {
 
     // Method to refresh favorite recipes in the fragment
     private void refreshFavoriteRecipes() {
-        // Reload favorite recipes from Firestore
         loadFavoriteRecipes();
     }
 }
