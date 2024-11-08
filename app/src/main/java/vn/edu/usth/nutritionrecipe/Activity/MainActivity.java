@@ -7,7 +7,6 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import vn.edu.usth.nutritionrecipe.Adapter.AdapterViewPager;
-import vn.edu.usth.nutritionrecipe.Fragment.ExploreFragment;
 import vn.edu.usth.nutritionrecipe.Fragment.FavoriteFragment;
 import vn.edu.usth.nutritionrecipe.Fragment.HomeFragment;
 import vn.edu.usth.nutritionrecipe.R;
@@ -29,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Add fragments to list
         fragmentArrayList.add(new HomeFragment());
-        fragmentArrayList.add(new ExploreFragment());
         fragmentArrayList.add(new FavoriteFragment());
 
         // Setup ViewPager2 Adapter
@@ -42,11 +40,8 @@ public class MainActivity extends AppCompatActivity {
             if (itemId == R.id.navigation_home) {
                 pagerMain.setCurrentItem(0);
                 return true;
-            } else if (itemId == R.id.navigation_explore) {
-                pagerMain.setCurrentItem(1);
-                return true;
             } else if (itemId == R.id.navigation_favorite) {
-                pagerMain.setCurrentItem(2);
+                pagerMain.setCurrentItem(1);
                 return true;
             }
             return false;
@@ -61,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
                 if (position == 0) {
                     navView.setSelectedItemId(R.id.navigation_home);
                 } else if (position == 1) {
-                    navView.setSelectedItemId(R.id.navigation_explore);
-                } else if (position == 2) {
                     navView.setSelectedItemId(R.id.navigation_favorite);
                 }
             }

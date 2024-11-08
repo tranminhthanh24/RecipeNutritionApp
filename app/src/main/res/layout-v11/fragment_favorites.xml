@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/dark_bg1"
-    tools:context=".Fragment.FavoritesFragment">
+    tools:context=".Fragment.FavoriteFragment">
 
     <!-- Toolbar with title and Refresh FAB -->
     <androidx.appcompat.widget.Toolbar
