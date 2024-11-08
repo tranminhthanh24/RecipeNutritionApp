@@ -2,9 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -43,6 +45,15 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.parse.ApplicationId"
+            android:value="Fwbvp394UxZN5d7RJoufuJWEeJzDI1ek9HPPy9F7" />
+        <meta-data
+            android:name="com.parse.ClientKey"
+            android:value="Yql2tOqO5RXlmP2C9Va4vCwbXGjg6QwCpvRv8DjX" />
+        <meta-data
+            android:name="com.parse.ServerURL"
+            android:value="https://parseapi.back4app.com" />
     </application>
 
 </manifest>

@@ -1,12 +1,9 @@
 package vn.edu.usth.nutritionrecipe.Activity;
 
-import static com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.client.methods.RequestBuilder.put;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -20,14 +17,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FieldValue;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 import com.squareup.picasso.Picasso;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -55,8 +50,6 @@ public class RecipeDetailsActivity extends AppCompatActivity {
     SimilarRecipeAdapter similarRecipeAdapter;
     InstructionsAdapter instructionsAdapter;
     Button favoriteButton;
-    private FirebaseFirestore firestore;
-    private FirebaseAuth auth;
 
 
     @Override
@@ -74,9 +67,6 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         dialog = new ProgressDialog(this);
         dialog.setTitle("Loading...");
         dialog.show();
-
-        firestore = FirebaseFirestore.getInstance();
-        auth = FirebaseAuth.getInstance();
 
         favoriteButton.setOnClickListener(view -> addRecipeToFavorites(String.valueOf(id)));
     }
@@ -160,52 +150,41 @@ public class RecipeDetailsActivity extends AppCompatActivity {
     };
 
     private void addRecipeToFavorites(String recipeId) {
-        String userId = auth.getCurrentUser() != null ? auth.getCurrentUser().getUid() : null;
-
-        if (userId == null) {
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser == null) {
             Toast.makeText(this, "User not authenticated", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        DocumentReference userFavoritesDoc = firestore.collection("favorites").document(userId);
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Favorites");
+        query.whereEqualTo("userId", currentUser.getObjectId());
 
-        // Check if the user's document exists
-        userFavoritesDoc.get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                if (task.getResult().exists()) {
-                    // Document exists, so update the array with the new recipeId
-                    userFavoritesDoc.update("recipeIds", FieldValue.arrayUnion(recipeId))
-                            .addOnSuccessListener(aVoid -> {
-                                Toast.makeText(this, "Added to favorites", Toast.LENGTH_SHORT).show();
-                                favoriteButton.setText("Favorited");
-                            })
-                            .addOnFailureListener(e -> {
-                                Toast.makeText(this, "Failed to add to favorites", Toast.LENGTH_SHORT).show();
-                                Log.e("FavoriteError", "Error adding to favorites", e);
-                            });
-                } else {
-                    // Document does not exist, so create it with the `recipeIds` array
-                    userFavoritesDoc.set(new HashMap<String, Object>() {{
-                                put("recipeIds", Arrays.asList(recipeId));
-                            }})
-                            .addOnSuccessListener(aVoid -> {
-                                Toast.makeText(this, "Added to favorites", Toast.LENGTH_SHORT).show();
-                                favoriteButton.setText("Favorited");
-                            })
-                            .addOnFailureListener(e -> {
-                                Toast.makeText(this, "Failed to add to favorites", Toast.LENGTH_SHORT).show();
-                                Log.e("FavoriteError", "Error adding to favorites", e);
-                            });
-                }
+        query.getFirstInBackground((favoriteDoc, e) -> {
+            if (e == null) {
+                favoriteDoc.add("recipeIds", recipeId);
+                favoriteDoc.saveInBackground(e1 -> {
+                    if (e1 == null) {
+                        Toast.makeText(this, "Added to favorites", Toast.LENGTH_SHORT).show();
+                        favoriteButton.setText("Favorited");
+                    } else {
+                        Toast.makeText(this, "Failed to add to favorites", Toast.LENGTH_SHORT).show();
+                    }
+                });
             } else {
-                Toast.makeText(this, "Failed to retrieve document", Toast.LENGTH_SHORT).show();
-                Log.e("FavoriteError", "Error fetching document", task.getException());
+                ParseObject newFavorite = new ParseObject("Favorites");
+                newFavorite.put("userId", currentUser.getObjectId());
+                newFavorite.put("recipeIds", Arrays.asList(recipeId));
+                newFavorite.saveInBackground(e1 -> {
+                    if (e1 == null) {
+                        Toast.makeText(this, "Added to favorites", Toast.LENGTH_SHORT).show();
+                        favoriteButton.setText("Favorited");
+                    } else {
+                        Toast.makeText(this, "Failed to add to favorites", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
     }
-
-
-
 
 
     //Return to ExploreFragment

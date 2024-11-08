@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
+
+import com.parse.Parse;
+
 import vn.edu.usth.nutritionrecipe.Adapter.AdapterViewPager;
 import vn.edu.usth.nutritionrecipe.Fragment.ExploreFragment;
 import vn.edu.usth.nutritionrecipe.Fragment.FavoriteFragment;

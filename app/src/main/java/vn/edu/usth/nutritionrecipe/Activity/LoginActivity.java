@@ -10,24 +10,21 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 
 import vn.edu.usth.nutritionrecipe.R;
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText email, password;
-    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +32,6 @@ public class LoginActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
-        auth = FirebaseAuth.getInstance();
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
 
@@ -91,21 +87,22 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        auth.signInWithEmailAndPassword(userEmail, userPassword)
-                .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("userData");
+        query.whereEqualTo("userEmail", userEmail);
+        query.whereEqualTo("userPassword", userPassword);
 
-                        if (task.isSuccessful()) {
-
-                            Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-
-                        } else {
-                            Toast.makeText(LoginActivity.this, "Login failed" + task.getException(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+        // Attempt login by querying the database
+        query.getFirstInBackground((user, e) -> {
+            if (e == null) {
+                // Login successful
+                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
+                // Redirect to main activity
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            } else {
+                // Login failed
+                Toast.makeText(this, "Login Failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private boolean validateInput() {

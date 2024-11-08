@@ -1,6 +1,13 @@
 package vn.edu.usth.nutritionrecipe;
 
 import android.content.Context;
+import android.util.Log;
+
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.util.List;
 
@@ -20,9 +27,6 @@ import vn.edu.usth.nutritionrecipe.Models.InstructionsResponse;
 import vn.edu.usth.nutritionrecipe.Models.RandomRecipeApiResponse;
 import vn.edu.usth.nutritionrecipe.Models.RecipeDetailsResponse;
 import vn.edu.usth.nutritionrecipe.Models.SimilarRecipeResponse;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FieldValue;
 
 
 public class RequestManager {
@@ -32,14 +36,8 @@ public class RequestManager {
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
-    FirebaseFirestore firestore;
-    String userId;
-
     public RequestManager(Context context) {
         this.context = context;
-
-        firestore = FirebaseFirestore.getInstance();
-        userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
     }
 
     public  void getRandomRecipes(RandomRecipeResponseListener listener, List<String> tags){
@@ -128,41 +126,92 @@ public class RequestManager {
     }
 
     public void addFavoriteRecipe(int recipeId) {
-        firestore.collection("favorites").document(userId)
-                .update("id", FieldValue.arrayUnion(recipeId))
-                .addOnSuccessListener(aVoid -> {
-                    // Successfully added to favorites
-                })
-                .addOnFailureListener(e -> {
-                    // Handle error, e.g., log or display error message
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser == null) return;  // Ensure the user is logged in
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Favorites");
+        query.whereEqualTo("userId", currentUser.getObjectId());
+        query.findInBackground((objects, e) -> {
+            if (e == null && objects.size() > 0) {
+                ParseObject favorite = objects.get(0);
+                favorite.add("recipeIds", recipeId);  // Adding to list of favorite recipe IDs
+                favorite.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        if (e != null) {
+                            Log.e("AddFavorite", "Error adding recipe to favorites: " + e.getMessage());
+                        } else {
+                            Log.d("AddFavorite", "Recipe successfully added to favorites");
+                        }
+                    }
                 });
+            } else {
+                // No favorites record, create a new one
+                ParseObject favorite = new ParseObject("Favorites");
+                favorite.put("userId", currentUser.getObjectId());
+                favorite.add("recipeIds", recipeId);
+                favorite.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        if (e != null) {
+                            Log.e("AddFavorite", "Error creating new favorite record: " + e.getMessage());
+                        } else {
+                            Log.d("AddFavorite", "New favorite record created and recipe added");
+                        }
+                    }
+                });
+            }
+        });
     }
 
     public void removeFavoriteRecipe(int recipeId) {
-        firestore.collection("favorites").document(userId)
-                .update("id", FieldValue.arrayRemove(recipeId))
-                .addOnSuccessListener(aVoid -> {
-                    // Successfully removed from favorites
-                })
-                .addOnFailureListener(e -> {
-                    // Handle error, e.g., log or display error message
-                });
-    }
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser == null) return;  // Ensure the user is logged in
 
-    public void loadFavoriteRecipes(RecipeDetailsListener listener) {
-        firestore.collection("favorites").document(userId)
-                .get()
-                .addOnSuccessListener(documentSnapshot -> {
-                    if (documentSnapshot.exists() && documentSnapshot.contains("id")) {
-                        List<Integer> favoriteIds = (List<Integer>) documentSnapshot.get("id");
-                        for (int id : favoriteIds) {
-                            getRecipeDetails(listener, id); // Use existing method to fetch details
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Favorites");
+        query.whereEqualTo("userId", currentUser.getObjectId());
+        query.findInBackground((objects, e) -> {
+            if (e == null && objects.size() > 0) {
+                ParseObject favorite = objects.get(0);
+                // Remove the recipeId from the list of favorite recipes
+                favorite.removeAll("recipeIds", List.of(recipeId));  // Ensure it's removing the ID properly from the list
+                favorite.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        if (e != null) {
+                            Log.e("RemoveFavorite", "Error removing recipe from favorites: " + e.getMessage());
+                        } else {
+                            Log.d("RemoveFavorite", "Recipe successfully removed from favorites");
                         }
                     }
-                })
-                .addOnFailureListener(e -> {
-                    listener.didError(e.getMessage());
                 });
+            } else {
+                Log.e("RemoveFavorite", "No favorites record found for the user");
+            }
+        });
+    }
+
+
+    public void loadFavoriteRecipes(RecipeDetailsListener listener) {
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser == null) return;  // Ensure the user is logged in
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Favorites");
+        query.whereEqualTo("userId", currentUser.getObjectId());
+        query.include("recipeIds");  // Assuming "recipeIds" is a list field in the Favorites class
+        query.findInBackground((objects, e) -> {
+            if (e == null && objects.size() > 0) {
+                ParseObject favorite = objects.get(0);
+                List<Integer> recipeIds = favorite.getList("recipeIds");
+                if (recipeIds != null) {
+                    for (int id : recipeIds) {
+                        getRecipeDetails(listener, id); // Use existing method to fetch recipe details for each favorite
+                    }
+                }
+            } else {
+                listener.didError(e != null ? e.getMessage() : "Failed to load favorites.");
+            }
+        });
     }
 
     private interface CallRandomRecipes {

@@ -10,24 +10,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.ParseObject;
+
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 
 import vn.edu.usth.nutritionrecipe.R;
 
 public class RegistrationActivity extends AppCompatActivity {
 
     EditText email, password, confirmPassword;
-    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +30,7 @@ public class RegistrationActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_registration);
 
-        auth = FirebaseAuth.getInstance();
+
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         confirmPassword = findViewById(R.id.confirmPassword);
@@ -114,21 +109,21 @@ public class RegistrationActivity extends AppCompatActivity {
             return;
         }
 
-        auth.createUserWithEmailAndPassword(userEmail, userPassword)
-                        .addOnCompleteListener(RegistrationActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
+        ParseObject user = new ParseObject("userData");
 
-                                if (task.isSuccessful()){
+        user.put("userEmail", userEmail);
+        user.put("userPassword", userPassword);
 
-                                    Toast.makeText(RegistrationActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
-                                }else {
-                                    Toast.makeText(RegistrationActivity.this, "Registration failed"+task.getException(), Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
-
-        //startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
+        user.saveInBackground(e -> {
+            if (e == null) {
+                // Registration was successful
+                Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                // Redirect to login screen or main activity
+                startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
+            } else {
+                // Registration failed
+                Toast.makeText(this, "Registration Failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

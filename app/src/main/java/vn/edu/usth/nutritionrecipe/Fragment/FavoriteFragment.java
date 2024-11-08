@@ -11,8 +11,11 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
+
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,10 +32,9 @@ public class FavoriteFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private RandomRecipeAdapter adapter;
-    private FirebaseFirestore firestore;
-    private String userId;
     private RequestManager requestManager;
     private List<String> favoriteRecipeIds = new ArrayList<>();
+    private List<Recipe> favoriteRecipes = new ArrayList<>();
 
     @Nullable
     @Override
@@ -43,8 +45,6 @@ public class FavoriteFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
 
-        firestore = FirebaseFirestore.getInstance();
-        userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         requestManager = new RequestManager(getContext());
 
         adapter = new RandomRecipeAdapter(getContext(), new ArrayList<>(), recipeClickListener);
@@ -56,17 +56,28 @@ public class FavoriteFragment extends Fragment {
     }
 
     private void loadFavoriteRecipes() {
-        firestore.collection("favorites").document(userId)
-                .get()
-                .addOnSuccessListener(documentSnapshot -> {
-                    if (documentSnapshot.exists() && documentSnapshot.contains("recipeIds")) {
-                        favoriteRecipeIds = (List<String>) documentSnapshot.get("recipeIds");
-                        fetchFavoriteRecipesDetails();
-                    } else {
-                        Toast.makeText(getContext(), "No favorite recipes found", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .addOnFailureListener(e -> Toast.makeText(getContext(), "Failed to load favorites", Toast.LENGTH_SHORT).show());
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser == null) {
+            Toast.makeText(getContext(), "User not logged in", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Favorites");
+        query.whereEqualTo("userId", currentUser.getObjectId());
+        query.findInBackground((objects, e) -> {
+            if (e == null && objects.size() > 0) {
+                ParseObject favorite = objects.get(0);
+                favoriteRecipeIds = favorite.getList("recipeIds");
+
+                if (favoriteRecipeIds != null && !favoriteRecipeIds.isEmpty()) {
+                    fetchFavoriteRecipesDetails();
+                } else {
+                    Toast.makeText(getContext(), "No favorite recipes found", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(getContext(), "Failed to load favorites", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void fetchFavoriteRecipesDetails() {

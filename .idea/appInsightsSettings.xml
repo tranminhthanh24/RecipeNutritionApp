@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="vn.edu.usth.nutritionrecipe" />
-                  <option name="mobileSdkAppId" value="1:52236271474:android:6fc896d4c9c1e39aa767eb" />
-                  <option name="projectId" value="nutrition-recipe-9f77e" />
-                  <option name="projectNumber" value="52236271474" />
+                  <option name="appId" value="PLACEHOLDER" />
+                  <option name="mobileSdkAppId" value="" />
+                  <option name="projectId" value="" />
+                  <option name="projectNumber" value="" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

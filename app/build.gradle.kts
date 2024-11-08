@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -66,15 +65,12 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.swiperefreshlayout)
     implementation(libs.cardview)
-    implementation(libs.firebase.auth)
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics)
-    implementation(libs.firebase.crashlytics.buildtools)
-    implementation(libs.firebase.firestore)
     implementation(libs.recyclerview)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.picasso)
+    implementation(libs.play.services.tasks)
+    implementation("com.github.parse-community.Parse-SDK-Android:parse:4.2.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
