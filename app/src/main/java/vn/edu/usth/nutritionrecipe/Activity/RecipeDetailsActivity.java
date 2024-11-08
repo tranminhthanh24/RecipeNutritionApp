@@ -19,7 +19,6 @@ import android.widget.Toast;
 
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.parse.ParseUser;
 import com.squareup.picasso.Picasso;
 
 import java.util.Arrays;
@@ -38,6 +37,7 @@ import vn.edu.usth.nutritionrecipe.Models.RecipeDetailsResponse;
 import vn.edu.usth.nutritionrecipe.Models.SimilarRecipeResponse;
 import vn.edu.usth.nutritionrecipe.R;
 import vn.edu.usth.nutritionrecipe.RequestManager;
+import vn.edu.usth.nutritionrecipe.UserSessionManager;
 
 public class RecipeDetailsActivity extends AppCompatActivity {
     int id;
@@ -150,29 +150,42 @@ public class RecipeDetailsActivity extends AppCompatActivity {
     };
 
     private void addRecipeToFavorites(String recipeId) {
-        ParseUser currentUser = ParseUser.getCurrentUser();
-        if (currentUser == null) {
+        // Use UserSessionManager to get the current user's ID from session
+        UserSessionManager sessionManager = new UserSessionManager(this);
+        String userId = sessionManager.getUserIdFromStorage();
+
+        if (userId == null) {
             Toast.makeText(this, "User not authenticated", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        // Query for the Favorites object linked to the user
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Favorites");
-        query.whereEqualTo("userId", currentUser.getObjectId());
+        query.whereEqualTo("userId", userId);
 
+        // Retrieve the first matching document
         query.getFirstInBackground((favoriteDoc, e) -> {
             if (e == null) {
-                favoriteDoc.add("recipeIds", recipeId);
-                favoriteDoc.saveInBackground(e1 -> {
-                    if (e1 == null) {
-                        Toast.makeText(this, "Added to favorites", Toast.LENGTH_SHORT).show();
-                        favoriteButton.setText("Favorited");
-                    } else {
-                        Toast.makeText(this, "Failed to add to favorites", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                // If Favorites document exists, add the recipeId to the list
+                List<String> recipeIds = favoriteDoc.getList("recipeIds");
+                if (!recipeIds.contains(recipeId)) {
+                    recipeIds.add(recipeId);
+                    favoriteDoc.put("recipeIds", recipeIds);
+                    favoriteDoc.saveInBackground(e1 -> {
+                        if (e1 == null) {
+                            Toast.makeText(this, "Added to favorites", Toast.LENGTH_SHORT).show();
+                            favoriteButton.setText("Favorited");
+                        } else {
+                            Toast.makeText(this, "Failed to add to favorites", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                } else {
+                    Toast.makeText(this, "Already in favorites", Toast.LENGTH_SHORT).show();
+                }
             } else {
+                // If no existing Favorites document, create a new one
                 ParseObject newFavorite = new ParseObject("Favorites");
-                newFavorite.put("userId", currentUser.getObjectId());
+                newFavorite.put("userId", userId);
                 newFavorite.put("recipeIds", Arrays.asList(recipeId));
                 newFavorite.saveInBackground(e1 -> {
                     if (e1 == null) {
@@ -185,6 +198,8 @@ public class RecipeDetailsActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
 
     //Return to ExploreFragment

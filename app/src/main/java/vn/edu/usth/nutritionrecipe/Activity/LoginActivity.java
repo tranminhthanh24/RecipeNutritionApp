@@ -21,16 +21,21 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import vn.edu.usth.nutritionrecipe.R;
+import vn.edu.usth.nutritionrecipe.UserSessionManager;
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText email, password;
+
+    private UserSessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
+
+        sessionManager = new UserSessionManager(this);
 
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
@@ -96,8 +101,13 @@ public class LoginActivity extends AppCompatActivity {
             if (e == null) {
                 // Login successful
                 Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
+
+                String userId = user.getObjectId();
+                sessionManager.saveUserIdToStorage(userId);
+
                 // Redirect to main activity
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                finish();
             } else {
                 // Login failed
                 Toast.makeText(this, "Login Failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();

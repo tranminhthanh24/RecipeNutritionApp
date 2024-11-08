@@ -36,8 +36,12 @@ public class RequestManager {
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
+    private UserSessionManager sessionManager;
+
     public RequestManager(Context context) {
+
         this.context = context;
+        this.sessionManager = new UserSessionManager(context);
     }
 
     public  void getRandomRecipes(RandomRecipeResponseListener listener, List<String> tags){
@@ -126,11 +130,11 @@ public class RequestManager {
     }
 
     public void addFavoriteRecipe(int recipeId) {
-        ParseUser currentUser = ParseUser.getCurrentUser();
-        if (currentUser == null) return;  // Ensure the user is logged in
+        String userId = sessionManager.getUserIdFromStorage();
+        if (userId == null) return;  // Ensure the user is logged in
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Favorites");
-        query.whereEqualTo("userId", currentUser.getObjectId());
+        query.whereEqualTo("userId", userId);
         query.findInBackground((objects, e) -> {
             if (e == null && objects.size() > 0) {
                 ParseObject favorite = objects.get(0);
@@ -148,7 +152,7 @@ public class RequestManager {
             } else {
                 // No favorites record, create a new one
                 ParseObject favorite = new ParseObject("Favorites");
-                favorite.put("userId", currentUser.getObjectId());
+                favorite.put("userId", userId);
                 favorite.add("recipeIds", recipeId);
                 favorite.saveInBackground(new SaveCallback() {
                     @Override
@@ -165,11 +169,11 @@ public class RequestManager {
     }
 
     public void removeFavoriteRecipe(int recipeId) {
-        ParseUser currentUser = ParseUser.getCurrentUser();
-        if (currentUser == null) return;  // Ensure the user is logged in
+        String userId = sessionManager.getUserIdFromStorage();
+        if (userId == null) return;  // Ensure the user is logged in
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Favorites");
-        query.whereEqualTo("userId", currentUser.getObjectId());
+        query.whereEqualTo("userId", userId);
         query.findInBackground((objects, e) -> {
             if (e == null && objects.size() > 0) {
                 ParseObject favorite = objects.get(0);
@@ -193,25 +197,33 @@ public class RequestManager {
 
 
     public void loadFavoriteRecipes(RecipeDetailsListener listener) {
-        ParseUser currentUser = ParseUser.getCurrentUser();
-        if (currentUser == null) return;  // Ensure the user is logged in
+        String userId = sessionManager.getUserIdFromStorage();
+        if (userId == null) return;  // Ensure the user is logged in
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Favorites");
-        query.whereEqualTo("userId", currentUser.getObjectId());
-        query.include("recipeIds");  // Assuming "recipeIds" is a list field in the Favorites class
+        query.whereEqualTo("userId", userId);
+        query.include("recipeIds");  // Assuming you have a list of recipeIds in the Favorites class
         query.findInBackground((objects, e) -> {
             if (e == null && objects.size() > 0) {
                 ParseObject favorite = objects.get(0);
                 List<Integer> recipeIds = favorite.getList("recipeIds");
-                if (recipeIds != null) {
-                    for (int id : recipeIds) {
-                        getRecipeDetails(listener, id); // Use existing method to fetch recipe details for each favorite
-                    }
+
+                if (recipeIds != null && !recipeIds.isEmpty()) {
+                    // Fetch the details for each favorite recipe
+                    fetchRecipeDetailsForIds(recipeIds, listener);
+                } else {
+                    listener.didError("No favorite recipes found");
                 }
             } else {
-                listener.didError(e != null ? e.getMessage() : "Failed to load favorites.");
+                listener.didError("Failed to load favorite recipes: " + (e != null ? e.getMessage() : "Unknown error"));
             }
         });
+    }
+
+    private void fetchRecipeDetailsForIds(List<Integer> recipeIds, RecipeDetailsListener listener) {
+        for (int recipeId : recipeIds) {
+            getRecipeDetails(listener, recipeId);  // Using your existing getRecipeDetails method
+        }
     }
 
     private interface CallRandomRecipes {

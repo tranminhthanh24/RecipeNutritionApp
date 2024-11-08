@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Toast;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,6 +21,8 @@ import com.parse.ParseUser;
 import java.util.ArrayList;
 import java.util.List;
 
+import vn.edu.usth.nutritionrecipe.Activity.LoginActivity;
+import vn.edu.usth.nutritionrecipe.Activity.MainActivity;
 import vn.edu.usth.nutritionrecipe.Activity.RecipeDetailsActivity;
 import vn.edu.usth.nutritionrecipe.Adapter.RandomRecipeAdapter;
 import vn.edu.usth.nutritionrecipe.Listeners.RecipeClickListener;
@@ -28,6 +31,7 @@ import vn.edu.usth.nutritionrecipe.Models.RecipeDetailsResponse;
 import vn.edu.usth.nutritionrecipe.R;
 import vn.edu.usth.nutritionrecipe.RequestManager;
 import vn.edu.usth.nutritionrecipe.Listeners.RecipeDetailsListener;
+import vn.edu.usth.nutritionrecipe.UserSessionManager;
 
 public class FavoriteFragment extends Fragment {
 
@@ -36,12 +40,15 @@ public class FavoriteFragment extends Fragment {
     private RequestManager requestManager;
     private List<String> favoriteRecipeIds = new ArrayList<>();
     private FloatingActionButton fabRefresh;
-    private List<Recipe> favoriteRecipes = new ArrayList<>();
+
+    private UserSessionManager sessionManager;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_favorites, container, false);
+
+        sessionManager = new UserSessionManager(getContext());
 
         recyclerView = view.findViewById(R.id.recycler_favorite);
         recyclerView.setHasFixedSize(true);
@@ -63,16 +70,17 @@ public class FavoriteFragment extends Fragment {
     }
 
     private void loadFavoriteRecipes() {
-        ParseUser currentUser = ParseUser.getCurrentUser();
-        if (currentUser == null) {
-            Toast.makeText(getContext(), "User not logged in", Toast.LENGTH_SHORT).show();
+        String userId = sessionManager.getUserIdFromStorage();
+        if (userId == null) {
+            Toast.makeText(getContext(), "Please log in to view favorites", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getContext(), LoginActivity.class)); // Redirect to login
             return;
         }
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Favorites");
-        query.whereEqualTo("userId", currentUser.getObjectId());
+        query.whereEqualTo("userId", userId);
         query.findInBackground((objects, e) -> {
-            if (e == null && objects.size() > 0) {
+            if (e == null && !objects.isEmpty()) {
                 ParseObject favorite = objects.get(0);
                 favoriteRecipeIds = favorite.getList("recipeIds");
 
@@ -82,14 +90,18 @@ public class FavoriteFragment extends Fragment {
                     Toast.makeText(getContext(), "No favorite recipes found", Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(getContext(), "Failed to load favorites", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Failed to load favorites: " + (e != null ? e.getMessage() : "Unknown error"), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void fetchFavoriteRecipesDetails() {
-        List<Recipe> favoriteRecipes = new ArrayList<>();
+        if (favoriteRecipeIds.isEmpty()) {
+            Toast.makeText(getContext(), "No favorite recipes available", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
+        List<Recipe> favoriteRecipes = new ArrayList<>();
         for (String recipeId : favoriteRecipeIds) {
             requestManager.getRecipeDetails(new RecipeDetailsListener() {
                 @Override
@@ -125,5 +137,42 @@ public class FavoriteFragment extends Fragment {
     // Method to refresh favorite recipes in the fragment
     private void refreshFavoriteRecipes() {
         loadFavoriteRecipes();
+    }
+
+    // Method to clear cache and restart the activity
+    private void clearCacheAndRestart() {
+        try {
+            // Clear WebView cache
+            WebView webView = new WebView(getContext());
+            webView.clearCache(true);
+            webView.clearHistory();
+            webView.destroy();
+
+            // Clear app cache
+            deleteDir(getContext().getCacheDir());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Restart main activity
+        Intent intent = new Intent(getContext(), MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        requireActivity().finish(); // Close current activity
+    }
+
+    // Helper method to delete cache directory recursively
+    private boolean deleteDir(java.io.File dir) {
+        if (dir != null && dir.isDirectory()) {
+            String[] children = dir.list();
+            for (String child : children) {
+                boolean success = deleteDir(new java.io.File(dir, child));
+                if (!success) {
+                    return false;
+                }
+            }
+        }
+        return dir.delete();
     }
 }
