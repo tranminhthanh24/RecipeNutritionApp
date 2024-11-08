@@ -10,6 +10,7 @@
     android:background="@drawable/dark_bg1"
     tools:context=".Fragment.HomeFragment">
 
+    <!-- Toolbar Section -->
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
@@ -29,6 +30,7 @@
                 android:fontFamily="@font/lobster"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="8dp"/>
+
             <Spinner
                 android:id="@+id/spinner_tags"
                 android:gravity="center"
@@ -39,22 +41,45 @@
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
+    <!-- SearchBar Section with Refresh FAB -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_margin="8dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardElevation="8dp">
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchView_home"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:iconifiedByDefault="false"
-            app:searchIcon="@drawable/baseline_search_24"
-            app:queryHint="Searching Recipe" />
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/white">
 
+        <!-- Wrapper Layout for SearchView and FAB -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Search View -->
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:iconifiedByDefault="false"
+                app:searchIcon="@drawable/baseline_search_24"
+                app:queryHint="Searching Recipe"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@id/fab_refresh"
+                android:background="@android:color/transparent" />
+
+            <!-- Floating Action Button for Refresh -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_refresh"
+                android:contentDescription="@string/refresh"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp" />
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
+    <!-- RecyclerView Section -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_random"
         android:layout_width="match_parent"

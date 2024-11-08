@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -34,6 +35,7 @@ public class FavoriteFragment extends Fragment {
     private RandomRecipeAdapter adapter;
     private RequestManager requestManager;
     private List<String> favoriteRecipeIds = new ArrayList<>();
+    private FloatingActionButton fabRefresh;
     private List<Recipe> favoriteRecipes = new ArrayList<>();
 
     @Nullable
@@ -45,10 +47,15 @@ public class FavoriteFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
 
+
         requestManager = new RequestManager(getContext());
 
         adapter = new RandomRecipeAdapter(getContext(), new ArrayList<>(), recipeClickListener);
         recyclerView.setAdapter(adapter);
+
+        // Initialize FloatingActionButton and set click listener
+        fabRefresh = view.findViewById(R.id.fab_refresh);
+        fabRefresh.setOnClickListener(v -> refreshFavoriteRecipes());
 
         loadFavoriteRecipes();
 
@@ -115,4 +122,9 @@ public class FavoriteFragment extends Fragment {
         startActivity(intent);
     };
 
+    // Method to refresh favorite recipes in the fragment
+    private void refreshFavoriteRecipes() {
+        // Reload favorite recipes from Firestore
+        loadFavoriteRecipes();
+    }
 }
