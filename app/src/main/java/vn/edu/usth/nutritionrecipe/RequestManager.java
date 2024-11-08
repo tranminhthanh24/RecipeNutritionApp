@@ -1,13 +1,9 @@
 package vn.edu.usth.nutritionrecipe;
 
 import android.content.Context;
-import android.util.Log;
 
-import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.parse.ParseUser;
-import com.parse.SaveCallback;
 
 import java.util.List;
 
@@ -125,72 +121,6 @@ public class RequestManager {
             @Override
             public void onFailure(Call<List<InstructionsResponse>> call, Throwable throwable) {
                 listener.didError(throwable.getMessage());
-            }
-        });
-    }
-
-    public void addFavoriteRecipe(int recipeId) {
-        String userId = sessionManager.getUserIdFromStorage();
-        if (userId == null) return;  // Ensure the user is logged in
-
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Favorites");
-        query.whereEqualTo("userId", userId);
-        query.findInBackground((objects, e) -> {
-            if (e == null && objects.size() > 0) {
-                ParseObject favorite = objects.get(0);
-                favorite.add("recipeIds", recipeId);  // Adding to list of favorite recipe IDs
-                favorite.saveInBackground(new SaveCallback() {
-                    @Override
-                    public void done(ParseException e) {
-                        if (e != null) {
-                            Log.e("AddFavorite", "Error adding recipe to favorites: " + e.getMessage());
-                        } else {
-                            Log.d("AddFavorite", "Recipe successfully added to favorites");
-                        }
-                    }
-                });
-            } else {
-                // No favorites record, create a new one
-                ParseObject favorite = new ParseObject("Favorites");
-                favorite.put("userId", userId);
-                favorite.add("recipeIds", recipeId);
-                favorite.saveInBackground(new SaveCallback() {
-                    @Override
-                    public void done(ParseException e) {
-                        if (e != null) {
-                            Log.e("AddFavorite", "Error creating new favorite record: " + e.getMessage());
-                        } else {
-                            Log.d("AddFavorite", "New favorite record created and recipe added");
-                        }
-                    }
-                });
-            }
-        });
-    }
-
-    public void removeFavoriteRecipe(int recipeId) {
-        String userId = sessionManager.getUserIdFromStorage();
-        if (userId == null) return;  // Ensure the user is logged in
-
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Favorites");
-        query.whereEqualTo("userId", userId);
-        query.findInBackground((objects, e) -> {
-            if (e == null && objects.size() > 0) {
-                ParseObject favorite = objects.get(0);
-                // Remove the recipeId from the list of favorite recipes
-                favorite.removeAll("recipeIds", List.of(recipeId));  // Ensure it's removing the ID properly from the list
-                favorite.saveInBackground(new SaveCallback() {
-                    @Override
-                    public void done(ParseException e) {
-                        if (e != null) {
-                            Log.e("RemoveFavorite", "Error removing recipe from favorites: " + e.getMessage());
-                        } else {
-                            Log.d("RemoveFavorite", "Recipe successfully removed from favorites");
-                        }
-                    }
-                });
-            } else {
-                Log.e("RemoveFavorite", "No favorites record found for the user");
             }
         });
     }
