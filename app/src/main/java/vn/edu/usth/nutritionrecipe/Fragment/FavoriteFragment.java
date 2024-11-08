@@ -1,6 +1,5 @@
 package vn.edu.usth.nutritionrecipe.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,12 +10,12 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 import java.util.List;
 
-import vn.edu.usth.nutritionrecipe.Activity.RecipeDetailsActivity;
 import vn.edu.usth.nutritionrecipe.Adapter.RandomRecipeAdapter;
 import vn.edu.usth.nutritionrecipe.Listeners.RecipeClickListener;
 import vn.edu.usth.nutritionrecipe.Models.Recipe;
@@ -33,6 +32,7 @@ public class FavoriteFragment extends Fragment {
     private String userId;
     private RequestManager requestManager;
     private List<String> favoriteRecipeIds = new ArrayList<>();
+    private FloatingActionButton fabRefresh;
 
     @Nullable
     @Override
@@ -49,6 +49,10 @@ public class FavoriteFragment extends Fragment {
 
         adapter = new RandomRecipeAdapter(getContext(), new ArrayList<>(), recipeClickListener);
         recyclerView.setAdapter(adapter);
+
+        // Initialize FloatingActionButton and set click listener
+        fabRefresh = view.findViewById(R.id.fab_refresh);
+        fabRefresh.setOnClickListener(v -> refreshFavoriteRecipes());
 
         loadFavoriteRecipes();
 
@@ -99,9 +103,12 @@ public class FavoriteFragment extends Fragment {
     }
 
     private final RecipeClickListener recipeClickListener = id -> {
-        Intent intent = new Intent(getContext(), RecipeDetailsActivity.class);
-        intent.putExtra("id", id);
-        startActivity(intent);
+        // Handle recipe click to navigate to RecipeDetailsActivity
     };
 
+    // Method to refresh favorite recipes in the fragment
+    private void refreshFavoriteRecipes() {
+        // Reload favorite recipes from Firestore
+        loadFavoriteRecipes();
+    }
 }
