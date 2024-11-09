@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/dark_bg1"
+    android:background="@drawable/dark_bg6"
     tools:context=".Fragment.FavoriteFragment">
 
     <!-- Toolbar with title and Refresh FAB -->
@@ -25,22 +25,19 @@
             android:fontFamily="@font/lobster"
             android:layout_gravity="center" />
 
-        <!-- Floating Action Button for Refresh in the top-right corner -->
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <ImageButton
             android:id="@+id/fab_refresh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_refresh"
             android:contentDescription="@string/refresh"
             android:layout_gravity="end|center_vertical"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="8dp"
-            app:maxImageSize="24dp"
-            app:backgroundTint="@color/white" />
+            android:backgroundTint="#00FFFFFF"
+            app:tint="@color/purple_700" />
 
     </androidx.appcompat.widget.Toolbar>
 
-    <!-- RecyclerView for displaying favorite recipes -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_favorite"
         android:layout_width="match_parent"

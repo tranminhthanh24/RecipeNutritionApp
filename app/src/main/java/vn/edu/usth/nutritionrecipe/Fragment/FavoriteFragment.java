@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,7 +40,7 @@ public class FavoriteFragment extends Fragment {
     private RandomRecipeAdapter adapter;
     private RequestManager requestManager;
     private List<String> favoriteRecipeIds = new ArrayList<>();
-    private FloatingActionButton fabRefresh;
+    private ImageButton fabRefresh;
 
     private UserSessionManager sessionManager;
 

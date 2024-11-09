@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -42,7 +43,7 @@ public class HomeFragment extends Fragment {
     private Spinner spinner;
     private SearchView searchView;
     private List<String> tags = new ArrayList<>();
-    private FloatingActionButton fabRefresh;
+    private ImageButton fabRefresh;
 
     @Nullable
     @Override

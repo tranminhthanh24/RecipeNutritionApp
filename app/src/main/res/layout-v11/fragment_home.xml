@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/dark_bg1"
+    android:background="@drawable/dark_bg7"
     tools:context=".Fragment.HomeFragment">
 
     <!-- Toolbar Section -->
@@ -66,8 +66,8 @@
                 android:layout_toStartOf="@id/fab_refresh"
                 android:background="@android:color/transparent" />
 
-            <!-- Floating Action Button for Refresh -->
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+            <ImageButton
                 android:id="@+id/fab_refresh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -75,11 +75,12 @@
                 android:contentDescription="@string/refresh"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="8dp" />
+                app:tint="@color/purple_700"
+                android:backgroundTint="#FFFF" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- RecyclerView Section -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_random"
         android:layout_width="match_parent"
