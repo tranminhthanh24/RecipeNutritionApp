@@ -200,19 +200,6 @@ public class RecipeDetailsActivity extends AppCompatActivity {
     }
 
 
-
-
-    //Return to ExploreFragment
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        //Check if the home button was pressed
-        if (item.getItemId() == android.R.id.home) {
-            onBackPressed(); //Go back to the ExploreFragment
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
     //Toggle favButton
     public void onDefaultToggleClick(View view) {
     }
